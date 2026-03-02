@@ -1,0 +1,279 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Blue House Tackleway — Coastal Holiday Let, Hastings</title>
+  <meta name="description" content="A beautifully restored coastal cottage on the historic Tackleway, Hastings Old Town. Sleeps 4, sea views, private garden.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { DEFAULT:'#f5f0e6', 50:'#fdfbf7', 200:'#ede5d3', 300:'#d9d0c0' },
+            forest: { 300:'#73a477', 400:'#4a8050', 500:'#2e5e33', 600:'#1e4523', 700:'#122d16', 800:'#0a1c0c', 900:'#070f08' },
+            stone: { 50:'#faf8f4', 100:'#f0ece4', 200:'#ddd6c8', 300:'#c5bba9', 400:'#a8998a', 500:'#8a7a6c', 600:'#6e6254', 700:'#52483d', 800:'#36302a', 900:'#1a1610' }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Jost', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="font-sans font-light text-stone-900 bg-cream-50 antialiased">
+
+  <!-- ── Navigation ── -->
+  <nav class="sticky top-0 z-50 bg-cream-50 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-8 h-[72px] flex items-center justify-between">
+      <a href="index.html" class="group">
+        <div class="font-serif font-light text-[22px] text-stone-900 leading-none tracking-wide">The Blue House</div>
+        <div class="text-[9px] tracking-[0.3em] uppercase text-stone-500 mt-0.5">Tackleway, Hastings</div>
+      </a>
+      <!-- Desktop -->
+      <ul class="hidden md:flex items-center gap-10 list-none m-0 p-0">
+        <li><a href="index.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-900 border-b border-stone-900 pb-px">Home</a></li>
+        <li><a href="images.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Gallery</a></li>
+        <li><a href="contact.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Prices &amp; Enquiries</a></li>
+        <li>
+          <a href="contact.html" class="text-[11px] tracking-[0.18em] uppercase border border-stone-900 text-stone-900 px-6 py-2.5 hover:bg-stone-900 hover:text-cream transition-colors">
+            Enquire
+          </a>
+        </li>
+      </ul>
+      <!-- Hamburger -->
+      <button id="hamburger" class="md:hidden flex flex-col gap-[5px] p-1 bg-transparent border-none cursor-pointer" aria-label="Toggle menu">
+        <span class="block w-5 h-px bg-stone-900"></span>
+        <span class="block w-5 h-px bg-stone-900"></span>
+        <span class="block w-5 h-px bg-stone-900"></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <ul id="navLinks" class="hidden flex-col list-none m-0 px-8 pb-6 gap-5 border-t border-stone-200 bg-cream-50">
+      <li class="pt-5"><a href="index.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-900">Home</a></li>
+      <li><a href="images.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500">Gallery</a></li>
+      <li><a href="contact.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500">Prices &amp; Enquiries</a></li>
+      <li class="pb-1"><a href="contact.html" class="inline-block border border-stone-900 text-[11px] tracking-[0.18em] uppercase text-stone-900 px-6 py-2.5">Enquire</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="relative flex items-end bg-forest-900 overflow-hidden" style="height:calc(100vh - 72px);min-height:580px">
+    <img data-cms-src="hero.image" src="images/selected/96289fc7-4387-4530-8a36-bf3407f6dddb.jpeg.avif" alt="The Blue House Tackleway, Hastings" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-forest-900/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-forest-900/10 to-transparent"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-8 pb-20 w-full">
+      <div class="max-w-2xl">
+        <p class="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-6">Tackleway, Hastings Old Town, East Sussex</p>
+        <h1 class="font-serif font-light text-white leading-none mb-7" style="font-size:clamp(3.5rem,8vw,6.5rem)">
+          The Blue<br>House<br>Tackleway
+        </h1>
+        <div class="w-12 h-px bg-stone-600 mb-7"></div>
+        <p data-cms="hero.tagline" class="text-stone-300 font-light text-[15px] leading-relaxed mb-10 max-w-sm">A charming coastal retreat where the sea breeze finds you every morning.</p>
+        <div class="flex flex-wrap items-center gap-8">
+          <a href="contact.html" class="inline-flex items-center bg-white text-stone-900 text-[11px] tracking-[0.18em] uppercase px-9 py-4 hover:bg-cream transition-colors">
+            Check Availability
+          </a>
+          <a href="images.html" class="inline-flex items-center gap-2 text-[11px] tracking-[0.18em] uppercase text-stone-400 hover:text-white transition-colors">
+            View Gallery <span class="text-base leading-none">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats strip ── -->
+  <div class="bg-stone-100 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-8 py-4 overflow-x-auto">
+      <ul class="flex items-center gap-0 list-none m-0 p-0 whitespace-nowrap">
+        <li data-cms="stats.0" class="text-[10px] tracking-[0.22em] uppercase text-stone-500 pr-7">2 Bedrooms</li>
+        <li class="text-stone-300 pr-7">·</li>
+        <li data-cms="stats.1" class="text-[10px] tracking-[0.22em] uppercase text-stone-500 pr-7">Sleeps 4</li>
+        <li class="text-stone-300 pr-7">·</li>
+        <li data-cms="stats.2" class="text-[10px] tracking-[0.22em] uppercase text-stone-500 pr-7">Sea Views</li>
+        <li class="text-stone-300 pr-7">·</li>
+        <li data-cms="stats.3" class="text-[10px] tracking-[0.22em] uppercase text-stone-500 pr-7">Private Garden</li>
+        <li class="text-stone-300 pr-7">·</li>
+        <li data-cms="stats.4" class="text-[10px] tracking-[0.22em] uppercase text-stone-500 pr-7">Pets Welcome</li>
+        <li class="text-stone-300 pr-7">·</li>
+        <li data-cms="stats.5" class="text-[10px] tracking-[0.22em] uppercase text-stone-500">Hastings Old Town</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── About ── -->
+  <section class="bg-cream py-28">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-24 items-start">
+
+        <!-- Text -->
+        <div>
+          <p class="text-[10px] tracking-[0.3em] uppercase text-forest-500 mb-6">The Property</p>
+          <h2 data-cms-html="about.heading" class="font-serif font-light text-stone-900 leading-tight mb-8" style="font-size:clamp(2.2rem,4vw,3.5rem)">Your home away<br>from home</h2>
+          <div class="w-10 h-px bg-stone-400 mb-8"></div>
+          <p data-cms="about.para1" class="text-stone-600 font-light leading-relaxed mb-5 text-[15px]">Tucked away on the historic Tackleway in Hastings Old Town, The Blue House is a lovingly restored coastal cottage offering everything you need for a perfect seaside escape. You'll be in love the moment you arrive.</p>
+          <p data-cms="about.para2" class="text-stone-600 font-light leading-relaxed text-[15px]">Wake up to the sound of the sea, explore the winding Old Town lanes, and return each evening to a cosy, stylishly furnished retreat. Whether you're here for a weekend break or a longer stay, The Blue House has you covered.</p>
+          <a href="images.html" class="inline-flex items-center gap-2 mt-10 text-[11px] tracking-[0.18em] uppercase text-stone-500 border-b border-stone-400 pb-px hover:text-stone-900 hover:border-stone-900 transition-colors">
+            Explore the Gallery <span class="text-base leading-none">→</span>
+          </a>
+        </div>
+
+        <!-- Spec list -->
+        <div>
+          <p class="text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-6">At a Glance</p>
+          <dl class="divide-y divide-stone-200">
+            <div class="flex justify-between items-baseline py-4">
+              <dt data-cms="specs.0.label" class="text-[10px] tracking-[0.2em] uppercase text-stone-500">Bedrooms</dt>
+              <dd data-cms="specs.0.value" class="font-serif font-light text-xl text-stone-900">3</dd>
+            </div>
+            <div class="flex justify-between items-baseline py-4">
+              <dt data-cms="specs.1.label" class="text-[10px] tracking-[0.2em] uppercase text-stone-500">Guests</dt>
+              <dd data-cms="specs.1.value" class="font-serif font-light text-xl text-stone-900">Up to 6</dd>
+            </div>
+            <div class="flex justify-between items-baseline py-4">
+              <dt data-cms="specs.2.label" class="text-[10px] tracking-[0.2em] uppercase text-stone-500">Bathrooms</dt>
+              <dd data-cms="specs.2.value" class="font-serif font-light text-xl text-stone-900">1</dd>
+            </div>
+            <div class="flex justify-between items-baseline py-4">
+              <dt data-cms="specs.3.label" class="text-[10px] tracking-[0.2em] uppercase text-stone-500">Location</dt>
+              <dd data-cms="specs.3.value" class="font-serif font-light text-xl text-stone-900">Hastings Old Town</dd>
+            </div>
+            <div class="flex justify-between items-baseline py-4">
+              <dt data-cms="specs.4.label" class="text-[10px] tracking-[0.2em] uppercase text-stone-500">Views</dt>
+              <dd data-cms="specs.4.value" class="font-serif font-light text-xl text-stone-900">Sea &amp; Old Town</dd>
+            </div>
+            <div class="flex justify-between items-baseline py-4">
+              <dt data-cms="specs.5.label" class="text-[10px] tracking-[0.2em] uppercase text-stone-500">Parking</dt>
+              <dd data-cms="specs.5.value" class="font-serif font-light text-xl text-stone-900">Paid nearby</dd>
+            </div>
+            <div class="flex justify-between items-baseline py-4">
+              <dt data-cms="specs.6.label" class="text-[10px] tracking-[0.2em] uppercase text-stone-500">Garden</dt>
+              <dd data-cms="specs.6.value" class="font-serif font-light text-xl text-stone-900">Private</dd>
+            </div>
+            <div class="flex justify-between items-baseline py-4">
+              <dt data-cms="specs.7.label" class="text-[10px] tracking-[0.2em] uppercase text-stone-500">Pets</dt>
+              <dd data-cms="specs.7.value" class="font-serif font-light text-xl text-stone-900">Welcome</dd>
+            </div>
+            <div class="flex justify-between items-baseline py-4">
+              <dt data-cms="specs.8.label" class="text-[10px] tracking-[0.2em] uppercase text-stone-500">WiFi</dt>
+              <dd data-cms="specs.8.value" class="font-serif font-light text-xl text-stone-900">High-speed included</dd>
+            </div>
+          </dl>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Photo strip ── -->
+  <div class="bg-stone-100 grid grid-cols-1 md:grid-cols-3 gap-px">
+    <div class="relative overflow-hidden" style="height:320px">
+      <img data-cms-src="photoStrip.0" src="images/selected/557a9df3-d815-4df3-9b1a-000c43fe98bf.jpeg.avif" alt="The Blue House Tackleway" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+    </div>
+    <div class="relative overflow-hidden" style="height:320px">
+      <img data-cms-src="photoStrip.1" src="images/selected/2017406a-5645-4ebb-8c1d-fcdd7fe64cb8.jpeg.avif" alt="The Blue House Tackleway" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+    </div>
+    <div class="relative overflow-hidden" style="height:320px">
+      <img data-cms-src="photoStrip.2" src="images/selected/a945fe39-b812-42d4-b634-2d34f7372ef1.jpeg.avif" alt="The Blue House Tackleway" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+    </div>
+  </div>
+
+  <!-- ── Dark highlights ── -->
+  <section class="bg-forest-900 py-28">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center mb-20">
+        <p class="text-[10px] tracking-[0.3em] uppercase text-forest-300 mb-5">Why Stay With Us</p>
+        <h2 class="font-serif font-light text-white" style="font-size:clamp(2rem,4vw,3rem)">The perfect coastal escape</h2>
+      </div>
+      <div class="grid md:grid-cols-3 border-t border-forest-700">
+        <div class="border-r border-forest-700 md:last:border-r-0 py-12 px-10 first:pl-0 last:pr-0">
+          <div class="w-8 h-px bg-forest-500 mb-8"></div>
+          <h3 data-cms="highlights.0.title" class="font-serif font-light text-2xl text-white mb-4">Unbeatable Location</h3>
+          <p data-cms="highlights.0.desc" class="text-stone-400 font-light text-sm leading-relaxed">A short stroll to the beach, Hastings Old Town, independent restaurants, and the famous fishermen's huts on the Stade.</p>
+        </div>
+        <div class="border-r border-forest-700 md:last:border-r-0 py-12 px-10">
+          <div class="w-8 h-px bg-forest-500 mb-8"></div>
+          <h3 data-cms="highlights.1.title" class="font-serif font-light text-2xl text-white mb-4">Stylish &amp; Comfortable</h3>
+          <p data-cms="highlights.1.desc" class="text-stone-400 font-light text-sm leading-relaxed">Thoughtfully furnished with quality linens, a fully-equipped kitchen, and every detail considered so you can simply arrive and unwind.</p>
+        </div>
+        <div class="py-12 px-10 last:pr-0">
+          <div class="w-8 h-px bg-forest-500 mb-8"></div>
+          <h3 data-cms="highlights.2.title" class="font-serif font-light text-2xl text-white mb-4">Local Knowledge</h3>
+          <p data-cms="highlights.2.desc" class="text-stone-400 font-light text-sm leading-relaxed">We'll share our favourite spots — from hidden cafés to coastal walks — so you experience Hastings like a local, not a tourist.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pull quote ── -->
+  <section class="bg-cream-200 py-24">
+    <div class="max-w-3xl mx-auto px-8 text-center">
+      <div class="w-12 h-px bg-stone-400 mx-auto mb-12"></div>
+      <blockquote data-cms="quote" class="font-serif font-light italic leading-relaxed text-stone-800 mb-12" style="font-size:clamp(1.5rem,3vw,2.25rem)">Wake up to the sound of the sea, step outside into the winding lanes of Hastings Old Town, and let yourself slow down at The Blue House.</blockquote>
+      <div class="w-12 h-px bg-stone-400 mx-auto mb-6"></div>
+      <p class="text-[10px] tracking-[0.3em] uppercase text-stone-500">Tackleway, Hastings Old Town, East Sussex</p>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="bg-stone-900 py-28">
+    <div class="max-w-3xl mx-auto px-8 text-center">
+      <p class="text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-6">Ready to Visit?</p>
+      <h2 data-cms-html="cta.heading" class="font-serif font-light text-white leading-tight mb-8" style="font-size:clamp(2.2rem,5vw,4rem)">Plan your stay at<br>The Blue House</h2>
+      <div class="w-10 h-px bg-stone-700 mx-auto mb-8"></div>
+      <p data-cms="cta.body" class="text-stone-400 font-light leading-relaxed mb-12 text-[15px] max-w-md mx-auto">Check our availability, explore our seasonal pricing, and get in touch — we'd love to host you.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="contact.html" class="inline-flex bg-white text-stone-900 text-[11px] tracking-[0.18em] uppercase px-10 py-4 hover:bg-cream transition-colors">
+          View Pricing &amp; Contact
+        </a>
+        <a href="images.html" class="inline-flex border border-stone-600 text-stone-300 text-[11px] tracking-[0.18em] uppercase px-10 py-4 hover:border-stone-400 hover:text-white transition-colors">
+          See the Gallery
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="bg-forest-900 text-stone-400">
+    <div class="max-w-7xl mx-auto px-8 pt-16 pb-10">
+      <div class="grid md:grid-cols-4 gap-12 pb-12 border-b border-forest-700">
+        <div class="md:col-span-2">
+          <div class="font-serif font-light text-2xl text-white leading-none mb-0.5">The Blue House</div>
+          <div class="text-[9px] tracking-[0.3em] uppercase text-forest-400 mb-6">Tackleway, Hastings</div>
+          <p data-cms="footer.description" class="text-sm font-light leading-relaxed max-w-xs">A beautifully restored coastal holiday let in the heart of Hastings Old Town, East Sussex. Available for short breaks and weekly stays throughout the year.</p>
+        </div>
+        <div>
+          <p class="text-[10px] tracking-[0.25em] uppercase text-stone-600 mb-5">Navigate</p>
+          <ul class="space-y-3 text-sm font-light list-none p-0 m-0">
+            <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="images.html" class="hover:text-white transition-colors">Gallery</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Pricing</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Enquire</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[10px] tracking-[0.25em] uppercase text-stone-600 mb-5">Contact</p>
+          <ul class="space-y-3 text-sm font-light list-none p-0 m-0">
+            <li>Tackleway<br>Hastings Old Town<br>East Sussex, TN34</li>
+            <li><a href="tel:+441234567890" class="hover:text-white transition-colors">+44 (0)1234 567890</a></li>
+            <li><a href="mailto:hello@bluehousethackleway.co.uk" class="hover:text-white transition-colors">hello@bluehousethackleway.co.uk</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col md:flex-row justify-between gap-2 text-[11px] tracking-wide text-stone-700 font-light">
+        <span>© 2025 The Blue House Tackleway. All rights reserved.</span>
+        <span>Hastings Old Town, East Sussex</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+
+</body></html>

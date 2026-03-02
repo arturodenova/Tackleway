@@ -1,0 +1,198 @@
+{
+  "hero": {
+    "image": "images/selected/96289fc7-4387-4530-8a36-bf3407f6dddb.jpeg.avif",
+    "tagline": "A charming coastal retreat where the sea breeze finds you every morning."
+  },
+  "about": {
+    "heading": "Your home away<br>from home",
+    "para1": "Tucked away on the historic Tackleway in Hastings Old Town, The Blue House is a lovingly restored coastal cottage offering everything you need for a perfect seaside escape. You'll be in love the moment you arrive.",
+    "para2": "Wake up to the sound of the sea, explore the winding Old Town lanes, and return each evening to a cosy, stylishly furnished retreat. Whether you're here for a weekend break or a longer stay, The Blue House has you covered."
+  },
+  "stats": [
+    "2 Bedrooms",
+    "Sleeps 4",
+    "Sea Views",
+    "Private Garden",
+    "Pets Welcome",
+    "Hastings Old Town"
+  ],
+  "specs": [
+    {
+      "label": "Bedrooms",
+      "value": "3"
+    },
+    {
+      "label": "Guests",
+      "value": "Up to 6"
+    },
+    {
+      "label": "Bathrooms",
+      "value": "1"
+    },
+    {
+      "label": "Location",
+      "value": "Hastings Old Town"
+    },
+    {
+      "label": "Views",
+      "value": "Sea & Old Town"
+    },
+    {
+      "label": "Parking",
+      "value": "Paid nearby"
+    },
+    {
+      "label": "Garden",
+      "value": "Private"
+    },
+    {
+      "label": "Pets",
+      "value": "Welcome"
+    },
+    {
+      "label": "WiFi",
+      "value": "High-speed included"
+    }
+  ],
+  "photoStrip": [
+    "images/selected/557a9df3-d815-4df3-9b1a-000c43fe98bf.jpeg.avif",
+    "images/selected/2017406a-5645-4ebb-8c1d-fcdd7fe64cb8.jpeg.avif",
+    "images/selected/a945fe39-b812-42d4-b634-2d34f7372ef1.jpeg.avif"
+  ],
+  "highlights": [
+    {
+      "title": "Unbeatable Location",
+      "desc": "A short stroll to the beach, Hastings Old Town, independent restaurants, and the famous fishermen's huts on the Stade."
+    },
+    {
+      "title": "Stylish & Comfortable",
+      "desc": "Thoughtfully furnished with quality linens, a fully-equipped kitchen, and every detail considered so you can simply arrive and unwind."
+    },
+    {
+      "title": "Local Knowledge",
+      "desc": "We'll share our favourite spots — from hidden cafés to coastal walks — so you experience Hastings like a local, not a tourist."
+    }
+  ],
+  "quote": "Wake up to the sound of the sea, step outside into the winding lanes of Hastings Old Town, and let yourself slow down at The Blue House.",
+  "cta": {
+    "heading": "Plan your stay at<br>The Blue House",
+    "body": "Check our availability, explore our seasonal pricing, and get in touch — we'd love to host you."
+  },
+  "pricing": {
+    "peak": {
+      "period": "July – AugustSchool Holidays",
+      "night": "£195",
+      "week": "£1,295"
+    },
+    "mid": {
+      "period": "Apr – JunSep – Oct",
+      "night": "£150",
+      "week": "£995"
+    },
+    "low": {
+      "period": "Nov – Marexcl. Christmas",
+      "night": "£110",
+      "week": "£695"
+    },
+    "christmas": {
+      "period": "23 Dec – 2 Jan",
+      "night": "£220",
+      "week": "£1,450"
+    }
+  },
+  "bookingConditions": [
+    {
+      "label": "Deposit",
+      "value": "25% non-refundable on booking"
+    },
+    {
+      "label": "Balance",
+      "value": "Due 6 weeks before arrival"
+    },
+    {
+      "label": "Check-in",
+      "value": "From 4pm"
+    },
+    {
+      "label": "Check-out",
+      "value": "By 10am"
+    },
+    {
+      "label": "Pets",
+      "value": "On request"
+    },
+    {
+      "label": "Cleaning",
+      "value": "Final clean included"
+    }
+  ],
+  "included": [
+    "High-speed WiFi",
+    "Smart TV & streaming",
+    "Quality linen & towels",
+    "Welcome hamper",
+    "Fully equipped kitchen",
+    "Off-road parking",
+    "Private garden & seating",
+    "Local guide & maps"
+  ],
+  "contact": {
+    "address": "Tackleway, Hastings Old Town\nEast Sussex, TN34",
+    "phone": "+44 (0)1234 567890",
+    "email": "hello@bluehousethackleway.co.uk"
+  },
+  "footer": {
+    "description": "A beautifully restored coastal holiday let in the heart of Hastings Old Town, East Sussex. Available for short breaks and weekly stays throughout the year."
+  },
+  "gallery": [
+    "images/selected/0bdd11dd-ad94-40f8-b212-86519d8e46cf.jpeg.avif",
+    "images/selected/0ddd0453-4ec8-4c55-aefe-b1bce7d67b23.jpeg.avif",
+    "images/selected/0e66b26a-ce41-4cb0-b016-55a0da087695.jpeg.avif",
+    "images/selected/0eda2210-58d3-4cb5-912f-629ab0d92606.png.avif",
+    "images/selected/119904e3-82e0-46e8-9947-addfa14adc85.png.avif",
+    "images/selected/195f5174-0515-4aa2-a021-80fb7a262d50.jpeg.avif",
+    "images/selected/1a259383-5df1-4b0a-aef4-198fd2e1a04e.jpeg.avif",
+    "images/selected/2017406a-5645-4ebb-8c1d-fcdd7fe64cb8.jpeg.avif",
+    "images/selected/2092b09f-e514-4aee-b845-f8e4bda7edaf.jpeg.avif",
+    "images/selected/240ac79c-f720-40a8-933c-a83e1813f889.jpeg.avif",
+    "images/selected/265772da-eb49-4468-a3d5-6de4b2005208.jpeg.avif",
+    "images/selected/2765b62b-068a-4132-9c1a-e29a32d72e74.jpeg.avif",
+    "images/selected/298e5c9a-7520-4727-ab28-894dc3de043b.jpeg.avif",
+    "images/selected/2c0a7480-4316-4cf0-a378-5f16ba28126a.jpeg.avif",
+    "images/selected/2ead314f-dc10-4ba0-afed-3ca9a583921a.jpeg.avif",
+    "images/selected/33a23266-ee63-4fb7-90e0-9d422a13da58.jpeg.avif",
+    "images/selected/383981be-5351-4b9b-bb16-0476f427d1e2.jpeg.avif",
+    "images/selected/3ce18aab-7756-43f4-8806-e01f6e536126.jpeg.avif",
+    "images/selected/48b7d3e2-7088-4c7a-8454-f6f9905b2d6e.jpeg.avif",
+    "images/selected/528d4080-7cf6-437e-be76-49c7b79e00c3.png.avif",
+    "images/selected/53413ced-b505-4654-9471-fcc0ebe2a496.jpeg.avif",
+    "images/selected/557a9df3-d815-4df3-9b1a-000c43fe98bf.jpeg.avif",
+    "images/selected/64cd6499-0b9e-474c-a9dc-079db90d9e68.jpeg.avif",
+    "images/selected/6d64d4c8-b165-4827-aa64-25683a393ae1.jpeg.avif",
+    "images/selected/769e8f64-bbb8-40de-adee-1ee91a713553.png.webp",
+    "images/selected/7a185f46-ca14-45c4-b86d-37d1f28ef153.jpeg.avif",
+    "images/selected/7a7752c8-5155-404f-9cc1-245e333d729a.jpeg.avif",
+    "images/selected/7b2935d3-819a-4b93-8139-7af79d14a076.jpeg.avif",
+    "images/selected/8889944d-dda6-452c-8902-c86d0dee34ff.jpeg.avif",
+    "images/selected/96289fc7-4387-4530-8a36-bf3407f6dddb.jpeg.avif",
+    "images/selected/9dce9751-1ca1-4fd4-8171-cbd3d8bbb75f.jpeg.avif",
+    "images/selected/a07ada58-8860-4d76-aa96-61a2d0053142.jpeg.avif",
+    "images/selected/a15982ed-0e49-49a7-b751-f5d2870ae682.jpeg.avif",
+    "images/selected/a1cda5c5-8bfd-4ee1-829f-a5be1354a380.png.avif",
+    "images/selected/a24706aa-0225-4b24-9d88-2d8f2d2dbdc7.png.avif",
+    "images/selected/a5494206-902a-451c-8a7b-181910c74440.jpeg.avif",
+    "images/selected/a945fe39-b812-42d4-b634-2d34f7372ef1.jpeg.avif",
+    "images/selected/ab9d0f89-bdee-4693-8faa-4a234a9e8f66.jpeg.avif",
+    "images/selected/ae1f0486-1a93-4a26-8171-571f36fc3ad6.png.avif",
+    "images/selected/b8286a14-c11e-4dc0-8ee6-e08cefcc92e8.jpeg.avif",
+    "images/selected/bf702f75-0d0e-4840-8901-575ffb026c8b.jpeg.avif",
+    "images/selected/c1cb5cbb-2e6f-4c19-a23a-ddb254c78f52.jpeg.avif",
+    "images/selected/e5261add-4d5e-48c7-88ed-604cf8f3691c.jpeg.avif",
+    "images/selected/e718d74a-10ab-49cc-b878-9f62e2faf7b4.jpeg.avif",
+    "images/selected/eb3633b5-4fde-4caf-85e5-efcc470a23e0.jpeg.avif",
+    "images/selected/ed7e14cc-056c-4712-8221-c78aa48b880d.jpeg.avif",
+    "images/selected/f214e709-2df6-4d21-a2db-618d3bc92593.jpeg.avif",
+    "images/selected/f2e9ab36-2260-4925-a9d1-20ef696492e6.png.avif",
+    "images/selected/fb8c5529-ddfb-4397-8ef7-031de894f7f6.jpeg.avif"
+  ]
+}

@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prices &amp; Enquiries — The Blue House Tackleway</title>
+  <meta name="description" content="View seasonal pricing and get in touch to book The Blue House Tackleway — coastal holiday let in Hastings Old Town.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { DEFAULT:'#f5f0e6', 50:'#fdfbf7', 200:'#ede5d3', 300:'#d9d0c0' },
+            forest: { 300:'#73a477', 400:'#4a8050', 500:'#2e5e33', 600:'#1e4523', 700:'#122d16', 800:'#0a1c0c', 900:'#070f08' },
+            stone: { 50:'#faf8f4', 100:'#f0ece4', 200:'#ddd6c8', 300:'#c5bba9', 400:'#a8998a', 500:'#8a7a6c', 600:'#6e6254', 700:'#52483d', 800:'#36302a', 900:'#1a1610' }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Jost', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="font-sans font-light text-stone-900 bg-cream-50 antialiased">
+
+  <!-- ── Navigation ── -->
+  <nav class="sticky top-0 z-50 bg-cream-50 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-8 h-[72px] flex items-center justify-between">
+      <a href="index.html">
+        <div class="font-serif font-light text-[22px] text-stone-900 leading-none tracking-wide">The Blue House</div>
+        <div class="text-[9px] tracking-[0.3em] uppercase text-stone-500 mt-0.5">Tackleway, Hastings</div>
+      </a>
+      <ul class="hidden md:flex items-center gap-10 list-none m-0 p-0">
+        <li><a href="index.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Home</a></li>
+        <li><a href="images.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Gallery</a></li>
+        <li><a href="contact.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-900 border-b border-stone-900 pb-px">Prices &amp; Enquiries</a></li>
+        <li><a href="contact.html" class="text-[11px] tracking-[0.18em] uppercase border border-stone-900 text-stone-900 px-6 py-2.5 hover:bg-stone-900 hover:text-cream transition-colors">Enquire</a></li>
+      </ul>
+      <button id="hamburger" class="md:hidden flex flex-col gap-[5px] p-1 bg-transparent border-none cursor-pointer" aria-label="Toggle menu">
+        <span class="block w-5 h-px bg-stone-900"></span>
+        <span class="block w-5 h-px bg-stone-900"></span>
+        <span class="block w-5 h-px bg-stone-900"></span>
+      </button>
+    </div>
+    <ul id="navLinks" class="hidden flex-col list-none m-0 px-8 pb-6 gap-5 border-t border-stone-200 bg-cream-50">
+      <li class="pt-5"><a href="index.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500">Home</a></li>
+      <li><a href="images.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500">Gallery</a></li>
+      <li><a href="contact.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-900">Prices &amp; Enquiries</a></li>
+      <li class="pb-1"><a href="contact.html" class="inline-block border border-stone-900 text-[11px] tracking-[0.18em] uppercase text-stone-900 px-6 py-2.5">Enquire</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Page header ── -->
+  <div class="bg-cream border-b border-stone-200 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <p class="text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-4">Rates &amp; Enquiries</p>
+      <h1 class="font-serif font-light text-stone-900" style="font-size:clamp(2.5rem,6vw,5rem)">Prices &amp; Contact</h1>
+      <div class="w-10 h-px bg-stone-400 mt-6"></div>
+    </div>
+  </div>
+
+  <!-- ── Main Content ── -->
+  <div class="bg-cream py-24">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-24 items-start">
+
+        <!-- ── Pricing ── -->
+        <div>
+          <p class="text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-6">Our Rates</p>
+          <h2 class="font-serif font-light text-stone-900 mb-2" style="font-size:clamp(1.8rem,3vw,2.75rem)">Seasonal Pricing</h2>
+          <p class="text-stone-500 font-light text-sm leading-relaxed mb-12">All rates are per night or per week. Minimum stays apply during peak season.</p>
+
+          <!-- Typographic pricing table -->
+          <div class="border-t border-stone-300">
+            <!-- Header -->
+            <div class="grid grid-cols-10 py-3 border-b border-stone-300">
+              <div class="col-span-3 text-[10px] tracking-[0.2em] uppercase text-stone-400">Season</div>
+              <div class="col-span-3 text-[10px] tracking-[0.2em] uppercase text-stone-400 hidden sm:block">Period</div>
+              <div class="col-span-2 text-[10px] tracking-[0.2em] uppercase text-stone-400 text-right">Night</div>
+              <div class="col-span-2 text-[10px] tracking-[0.2em] uppercase text-stone-400 text-right">Week</div>
+            </div>
+            <!-- Peak -->
+            <div class="grid grid-cols-10 py-6 border-b border-stone-200 items-baseline">
+              <div class="col-span-3 font-serif font-light text-2xl text-stone-900">Peak</div>
+              <div data-cms="pricing.peak.period" class="col-span-3 text-sm text-stone-400 font-light hidden sm:block">July – AugustSchool Holidays</div>
+              <div data-cms="pricing.peak.night" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£195</div>
+              <div data-cms="pricing.peak.week" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£1,295</div>
+            </div>
+            <!-- Mid -->
+            <div class="grid grid-cols-10 py-6 border-b border-stone-200 items-baseline">
+              <div class="col-span-3 font-serif font-light text-2xl text-stone-900">Mid</div>
+              <div data-cms="pricing.mid.period" class="col-span-3 text-sm text-stone-400 font-light hidden sm:block">Apr – JunSep – Oct</div>
+              <div data-cms="pricing.mid.night" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£150</div>
+              <div data-cms="pricing.mid.week" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£995</div>
+            </div>
+            <!-- Low -->
+            <div class="grid grid-cols-10 py-6 border-b border-stone-200 items-baseline">
+              <div class="col-span-3 font-serif font-light text-2xl text-stone-900">Low</div>
+              <div data-cms="pricing.low.period" class="col-span-3 text-sm text-stone-400 font-light hidden sm:block">Nov – Marexcl. Christmas</div>
+              <div data-cms="pricing.low.night" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£110</div>
+              <div data-cms="pricing.low.week" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£695</div>
+            </div>
+            <!-- Christmas -->
+            <div class="grid grid-cols-10 py-6 items-baseline">
+              <div class="col-span-3 font-serif font-light text-2xl text-stone-900">Christmas</div>
+              <div data-cms="pricing.christmas.period" class="col-span-3 text-sm text-stone-400 font-light hidden sm:block">23 Dec – 2 Jan</div>
+              <div data-cms="pricing.christmas.night" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£220</div>
+              <div data-cms="pricing.christmas.week" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£1,450</div>
+            </div>
+          </div>
+
+          <!-- Notes -->
+          <div class="border-t border-stone-200 mt-2 pt-8 space-y-4">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-5">Booking Conditions</p>
+            <div class="flex justify-between py-3 border-b border-stone-200">
+              <span data-cms="bookingConditions.0.label" class="text-[10px] tracking-[0.18em] uppercase text-stone-500">Deposit</span>
+              <span data-cms="bookingConditions.0.value" class="text-sm text-stone-700 font-light">25% non-refundable on booking</span>
+            </div>
+            <div class="flex justify-between py-3 border-b border-stone-200">
+              <span data-cms="bookingConditions.1.label" class="text-[10px] tracking-[0.18em] uppercase text-stone-500">Balance</span>
+              <span data-cms="bookingConditions.1.value" class="text-sm text-stone-700 font-light">Due 6 weeks before arrival</span>
+            </div>
+            <div class="flex justify-between py-3 border-b border-stone-200">
+              <span data-cms="bookingConditions.2.label" class="text-[10px] tracking-[0.18em] uppercase text-stone-500">Check-in</span>
+              <span data-cms="bookingConditions.2.value" class="text-sm text-stone-700 font-light">From 4pm</span>
+            </div>
+            <div class="flex justify-between py-3 border-b border-stone-200">
+              <span data-cms="bookingConditions.3.label" class="text-[10px] tracking-[0.18em] uppercase text-stone-500">Check-out</span>
+              <span data-cms="bookingConditions.3.value" class="text-sm text-stone-700 font-light">By 10am</span>
+            </div>
+            <div class="flex justify-between py-3 border-b border-stone-200">
+              <span data-cms="bookingConditions.4.label" class="text-[10px] tracking-[0.18em] uppercase text-stone-500">Pets</span>
+              <span data-cms="bookingConditions.4.value" class="text-sm text-stone-700 font-light">On request</span>
+            </div>
+            <div class="flex justify-between py-3">
+              <span data-cms="bookingConditions.5.label" class="text-[10px] tracking-[0.18em] uppercase text-stone-500">Cleaning</span>
+              <span data-cms="bookingConditions.5.value" class="text-sm text-stone-700 font-light">Final clean included</span>
+            </div>
+          </div>
+
+          <!-- What's included -->
+          <div class="mt-12">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-6">What's Included</p>
+            <div class="grid grid-cols-2 gap-x-8 gap-y-3">
+              <div class="flex items-center gap-2.5">
+                <div class="w-1 h-1 rounded-full bg-forest-500 flex-shrink-0"></div>
+                <span data-cms="included.0" class="text-sm text-stone-600 font-light">High-speed WiFi</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-1 h-1 rounded-full bg-forest-500 flex-shrink-0"></div>
+                <span data-cms="included.1" class="text-sm text-stone-600 font-light">Smart TV &amp; streaming</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-1 h-1 rounded-full bg-forest-500 flex-shrink-0"></div>
+                <span data-cms="included.2" class="text-sm text-stone-600 font-light">Quality linen &amp; towels</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-1 h-1 rounded-full bg-forest-500 flex-shrink-0"></div>
+                <span data-cms="included.3" class="text-sm text-stone-600 font-light">Welcome hamper</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-1 h-1 rounded-full bg-forest-500 flex-shrink-0"></div>
+                <span data-cms="included.4" class="text-sm text-stone-600 font-light">Fully equipped kitchen</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-1 h-1 rounded-full bg-forest-500 flex-shrink-0"></div>
+                <span data-cms="included.5" class="text-sm text-stone-600 font-light">Off-road parking</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-1 h-1 rounded-full bg-forest-500 flex-shrink-0"></div>
+                <span data-cms="included.6" class="text-sm text-stone-600 font-light">Private garden &amp; seating</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-1 h-1 rounded-full bg-forest-500 flex-shrink-0"></div>
+                <span data-cms="included.7" class="text-sm text-stone-600 font-light">Local guide &amp; maps</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Enquiry Form ── -->
+        <div>
+          <p class="text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-6">Get in Touch</p>
+          <h2 class="font-serif font-light text-stone-900 mb-2" style="font-size:clamp(1.8rem,3vw,2.75rem)">Make an Enquiry</h2>
+          <p class="text-stone-500 font-light text-sm leading-relaxed mb-8">Ready to book or have a question? We'll respond within 24 hours.</p>
+
+          <!-- Contact details -->
+          <div class="border-t border-stone-200 mb-10">
+            <div class="flex justify-between py-4 border-b border-stone-200">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Address</span>
+              <span data-cms="contact.address" class="text-sm text-stone-600 font-light text-right">Tackleway, Hastings Old Town
+East Sussex, TN34</span>
+            </div>
+            <div class="flex justify-between items-center py-4 border-b border-stone-200">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Telephone</span>
+              <a data-cms-tel="contact.phone" href="tel:+4401234567890" class="text-sm text-stone-700 font-light hover:text-stone-900 transition-colors">+44 (0)1234 567890</a>
+            </div>
+            <div class="flex justify-between items-center py-4">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Email</span>
+              <a data-cms-email="contact.email" href="mailto:hello@bluehousethackleway.co.uk" class="text-sm text-stone-700 font-light hover:text-stone-900 transition-colors">hello@bluehousethackleway.co.uk</a>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <form class="space-y-7" name="enquiry">
+            <div class="grid sm:grid-cols-2 gap-7">
+              <div>
+                <label class="block text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-2">Full Name</label>
+                <div class="border-b border-stone-300 focus-within:border-stone-900 transition-colors pb-1">
+                  <input type="text" name="name" placeholder="Your name" required="" class="w-full bg-transparent text-[15px] text-stone-900 font-light placeholder-stone-300 focus:outline-none">
+                </div>
+              </div>
+              <div>
+                <label class="block text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-2">Email Address</label>
+                <div class="border-b border-stone-300 focus-within:border-stone-900 transition-colors pb-1">
+                  <input type="email" name="email" placeholder="your@email.com" required="" class="w-full bg-transparent text-[15px] text-stone-900 font-light placeholder-stone-300 focus:outline-none">
+                </div>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-7">
+              <div>
+                <label class="block text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-2">Telephone</label>
+                <div class="border-b border-stone-300 focus-within:border-stone-900 transition-colors pb-1">
+                  <input type="tel" name="phone" placeholder="+44 7700 000000" class="w-full bg-transparent text-[15px] text-stone-900 font-light placeholder-stone-300 focus:outline-none">
+                </div>
+              </div>
+              <div>
+                <label class="block text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-2">Number of Guests</label>
+                <div class="border-b border-stone-300 focus-within:border-stone-900 transition-colors pb-1">
+                  <select name="guests" class="w-full bg-transparent text-[15px] text-stone-700 font-light focus:outline-none appearance-none cursor-pointer">
+                    <option value="">Select…</option>
+                    <option>1 guest</option>
+                    <option>2 guests</option>
+                    <option>3 guests</option>
+                    <option>4 guests</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-7">
+              <div>
+                <label class="block text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-2">Arrival</label>
+                <div class="border-b border-stone-300 focus-within:border-stone-900 transition-colors pb-1">
+                  <input type="date" name="checkin" class="w-full bg-transparent text-[15px] text-stone-700 font-light focus:outline-none">
+                </div>
+              </div>
+              <div>
+                <label class="block text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-2">Departure</label>
+                <div class="border-b border-stone-300 focus-within:border-stone-900 transition-colors pb-1">
+                  <input type="date" name="checkout" class="w-full bg-transparent text-[15px] text-stone-700 font-light focus:outline-none">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-2">Bringing Pets?</label>
+              <div class="border-b border-stone-300 focus-within:border-stone-900 transition-colors pb-1">
+                <select name="pets" class="w-full bg-transparent text-[15px] text-stone-700 font-light focus:outline-none appearance-none cursor-pointer">
+                  <option value="no">No pets</option>
+                  <option value="1">1 dog (+ £25)</option>
+                  <option value="2">2 dogs (+ £50)</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-2">Message</label>
+              <div class="border-b border-stone-300 focus-within:border-stone-900 transition-colors pb-1">
+                <textarea name="message" rows="4" placeholder="Tell us about your stay or ask us anything…" class="w-full bg-transparent text-[15px] text-stone-900 font-light placeholder-stone-300 focus:outline-none resize-none"></textarea>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <button type="submit" class="inline-flex items-center gap-4 bg-stone-900 text-white text-[11px] tracking-[0.18em] uppercase px-10 py-4 hover:bg-stone-800 transition-colors border-none cursor-pointer font-sans font-light">
+                Send Enquiry <span class="text-base leading-none">→</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Map placeholder ── -->
+  <div class="border-t border-stone-200 bg-stone-100 py-20">
+    <div class="max-w-7xl mx-auto px-8">
+      <p class="text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-4">Find Us</p>
+      <h2 class="font-serif font-light text-stone-900 mb-8" style="font-size:clamp(1.8rem,3vw,2.5rem)">Tackleway, Hastings</h2>
+      <!-- Replace with a Google Maps iframe -->
+      <div class="w-full h-64 bg-gradient-to-br from-forest-800 to-forest-900 flex flex-col items-center justify-center gap-3 text-white/40">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <p class="text-[11px] tracking-[0.2em] uppercase">Add a Google Maps embed here</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="bg-forest-900 text-stone-400">
+    <div class="max-w-7xl mx-auto px-8 pt-16 pb-10">
+      <div class="grid md:grid-cols-4 gap-12 pb-12 border-b border-forest-700">
+        <div class="md:col-span-2">
+          <div class="font-serif font-light text-2xl text-white leading-none mb-0.5">The Blue House</div>
+          <div class="text-[9px] tracking-[0.3em] uppercase text-forest-400 mb-6">Tackleway, Hastings</div>
+          <p class="text-sm font-light leading-relaxed max-w-xs">
+            A beautifully restored coastal holiday let in the heart of Hastings Old Town, East Sussex. Available for short breaks and weekly stays throughout the year.
+          </p>
+        </div>
+        <div>
+          <p class="text-[10px] tracking-[0.25em] uppercase text-stone-600 mb-5">Navigate</p>
+          <ul class="space-y-3 text-sm font-light list-none p-0 m-0">
+            <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="images.html" class="hover:text-white transition-colors">Gallery</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Pricing</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Enquire</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[10px] tracking-[0.25em] uppercase text-stone-600 mb-5">Contact</p>
+          <ul class="space-y-3 text-sm font-light list-none p-0 m-0">
+            <li data-cms="contact.address">Tackleway, Hastings Old Town
+East Sussex, TN34</li>
+            <li><a data-cms-tel="contact.phone" href="tel:+4401234567890" class="hover:text-white transition-colors">+44 (0)1234 567890</a></li>
+            <li><a data-cms-email="contact.email" href="mailto:hello@bluehousethackleway.co.uk" class="hover:text-white transition-colors">hello@bluehousethackleway.co.uk</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col md:flex-row justify-between gap-2 text-[11px] tracking-wide text-stone-700 font-light">
+        <span>© 2025 The Blue House Tackleway. All rights reserved.</span>
+        <span>Hastings Old Town, East Sussex</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+
+</body></html>

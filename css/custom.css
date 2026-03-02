@@ -1,0 +1,69 @@
+/* =========================================
+   The Blue House Tackleway — custom.css
+   Overrides & components not in Tailwind
+   ========================================= */
+
+/* Mobile nav open state */
+#navLinks.open { display: flex !important; }
+
+/* ---- Lightbox ---- */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 10, 5, 0.97);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox.open { display: flex; }
+
+.lightbox__img-wrap {
+  position: relative;
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox__img-wrap img {
+  max-width: 88vw;
+  max-height: 85vh;
+  object-fit: contain;
+  box-shadow: 0 8px 60px rgba(0,0,0,0.7);
+}
+.lightbox__placeholder {
+  width: 520px;
+  max-width: 80vw;
+  height: 420px;
+  max-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- Gallery ---- */
+.gallery-item { position: relative; overflow: hidden; cursor: pointer; display: block; }
+.gallery-item .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 18, 10, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.8);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.gallery-item:hover .overlay {
+  background: rgba(7, 18, 10, 0.45);
+  opacity: 1;
+}
+.gallery-item .gallery-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.gallery-item:hover .gallery-bg { transform: scale(1.04); }

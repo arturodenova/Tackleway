@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMS — The Blue House Tackleway</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { DEFAULT:'#f5f0e6', 50:'#fdfbf7', 200:'#ede5d3' },
+            forest: { 300:'#73a477', 500:'#2e5e33', 700:'#122d16', 900:'#070f08' },
+            stone: { 50:'#faf8f4', 100:'#f0ece4', 200:'#ddd6c8', 300:'#c5bba9', 400:'#a8998a', 500:'#8a7a6c', 600:'#6e6254', 700:'#52483d', 900:'#1a1610' }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond','Georgia','serif'],
+            sans:  ['Jost','system-ui','sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .tab-btn.active { border-color: #1a1610; color: #1a1610; }
+    .tab-btn { transition: all .15s; }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    .cms-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #c5bba9;
+      padding: 6px 0;
+      font-family: Jost, sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: #1a1610;
+      outline: none;
+      transition: border-color .15s;
+    }
+    .cms-input:focus { border-color: #1a1610; }
+    .cms-textarea {
+      width: 100%;
+      background: transparent;
+      border: 1px solid #c5bba9;
+      padding: 8px 10px;
+      font-family: Jost, sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: #1a1610;
+      outline: none;
+      resize: vertical;
+      transition: border-color .15s;
+    }
+    .cms-textarea:focus { border-color: #1a1610; }
+    .cms-label {
+      display: block;
+      font-size: 9px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: #8a7a6c;
+      margin-bottom: 4px;
+    }
+    .thumb {
+      width: 80px; height: 60px; object-fit: cover;
+      cursor: pointer; border: 2px solid transparent;
+      transition: border-color .15s;
+    }
+    .thumb.selected { border-color: #2e5e33; }
+    .gallery-thumb {
+      position: relative;
+      width: 120px; height: 90px; flex-shrink: 0;
+    }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-thumb .del {
+      position: absolute; top: 2px; right: 2px;
+      background: rgba(26,22,16,.7); color: #fff;
+      border: none; width: 20px; height: 20px;
+      font-size: 12px; cursor: pointer; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .toast {
+      position: fixed; bottom: 24px; right: 24px;
+      background: #1a1610; color: #fff;
+      padding: 12px 20px; font-size: 12px;
+      letter-spacing: .1em; text-transform: uppercase;
+      opacity: 0; transition: opacity .3s; pointer-events: none;
+      z-index: 9999;
+    }
+    .toast.show { opacity: 1; }
+    .drag-over { outline: 2px dashed #2e5e33; }
+    #loginScreen { position: fixed; inset: 0; z-index: 1000;
+      background: #fdfbf7; display: flex; align-items: center; justify-content: center; }
+  </style>
+</head>
+<body class="font-sans font-light text-stone-900 bg-stone-50 antialiased">
+
+<!-- ── Login screen ── -->
+<div id="loginScreen">
+  <div class="text-center px-8">
+    <div class="font-serif font-light text-3xl text-stone-900 mb-1">The Blue House</div>
+    <div class="text-[9px] tracking-[0.3em] uppercase text-stone-500 mb-12">Content Management</div>
+    <div class="mb-6">
+      <label class="cms-label text-left block mb-2">Password</label>
+      <input id="pwInput" type="password" placeholder="Enter CMS password"
+        class="cms-input max-w-xs" style="min-width:260px" />
+    </div>
+    <div id="loginError" class="text-red-500 text-xs mb-4 hidden">Incorrect password</div>
+    <button onclick="doLogin()"
+      class="inline-flex bg-stone-900 text-white text-[11px] tracking-[0.18em] uppercase px-10 py-3 hover:bg-stone-800 transition-colors border-none cursor-pointer font-sans font-light">
+      Sign In
+    </button>
+  </div>
+</div>
+
+<!-- ── Header ── -->
+<header class="bg-white border-b border-stone-200 sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="font-serif font-light text-lg text-stone-900 leading-none">The Blue House</div>
+      <span class="text-stone-300">·</span>
+      <span class="text-[10px] tracking-[0.2em] uppercase text-stone-500">Content Manager</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="/" target="_blank" class="text-[10px] tracking-[0.15em] uppercase text-stone-400 hover:text-stone-900 transition-colors">View Site ↗</a>
+      <button id="saveBtn" onclick="saveAll()"
+        class="inline-flex bg-stone-900 text-white text-[10px] tracking-[0.18em] uppercase px-6 py-2 hover:bg-stone-800 transition-colors border-none cursor-pointer font-sans font-light">
+        Save Changes
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── Tabs ── -->
+<div class="bg-white border-b border-stone-200">
+  <div class="max-w-6xl mx-auto px-6 flex gap-0">
+    <button class="tab-btn active text-[10px] tracking-[0.15em] uppercase px-5 py-4 border-b-2 border-stone-900 text-stone-900" onclick="switchTab('home',this)">Home</button>
+    <button class="tab-btn text-[10px] tracking-[0.15em] uppercase px-5 py-4 border-b-2 border-transparent text-stone-500 hover:text-stone-900" onclick="switchTab('pricing',this)">Pricing</button>
+    <button class="tab-btn text-[10px] tracking-[0.15em] uppercase px-5 py-4 border-b-2 border-transparent text-stone-500 hover:text-stone-900" onclick="switchTab('contact',this)">Contact</button>
+    <button class="tab-btn text-[10px] tracking-[0.15em] uppercase px-5 py-4 border-b-2 border-transparent text-stone-500 hover:text-stone-900" onclick="switchTab('images',this)">Images</button>
+    <button class="tab-btn text-[10px] tracking-[0.15em] uppercase px-5 py-4 border-b-2 border-transparent text-stone-500 hover:text-stone-900" onclick="switchTab('gallery',this)">Gallery</button>
+  </div>
+</div>
+
+<!-- ── Main ── -->
+<main class="max-w-6xl mx-auto px-6 py-10">
+
+  <!-- HOME panel -->
+  <div id="panel-home" class="panel active space-y-10">
+
+    <!-- Hero -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Hero Section</p>
+      <div class="bg-white border border-stone-200 p-6 space-y-5">
+        <div>
+          <label class="cms-label">Hero Image</label>
+          <div class="text-xs text-stone-500 mb-2" id="heroImgPath"></div>
+          <div id="heroThumbWrap" class="flex flex-wrap gap-2 mb-3"></div>
+          <label class="cursor-pointer inline-flex items-center gap-2 text-[10px] tracking-[0.15em] uppercase border border-stone-300 px-4 py-2 hover:border-stone-900 transition-colors">
+            <span>Upload New</span>
+            <input type="file" accept="image/*" class="hidden" onchange="uploadHero(this)">
+          </label>
+        </div>
+        <div>
+          <label class="cms-label">Hero Tagline</label>
+          <input type="text" id="hero.tagline" class="cms-input" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">About Section</p>
+      <div class="bg-white border border-stone-200 p-6 space-y-5">
+        <div>
+          <label class="cms-label">Heading <span class="normal-case text-stone-400">(use &lt;br&gt; for line breaks)</span></label>
+          <input type="text" id="about.heading" class="cms-input" />
+        </div>
+        <div>
+          <label class="cms-label">First Paragraph</label>
+          <textarea id="about.para1" class="cms-textarea" rows="3"></textarea>
+        </div>
+        <div>
+          <label class="cms-label">Second Paragraph</label>
+          <textarea id="about.para2" class="cms-textarea" rows="3"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats strip -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Stats Strip (top bar)</p>
+      <div class="bg-white border border-stone-200 p-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="statsGrid"></div>
+      </div>
+    </section>
+
+    <!-- Spec list -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">At a Glance — Spec List</p>
+      <div class="bg-white border border-stone-200 p-6">
+        <div class="space-y-3" id="specsGrid"></div>
+      </div>
+    </section>
+
+    <!-- Photo strip -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Home Page — Photo Strip (3 images)</p>
+      <div class="bg-white border border-stone-200 p-6">
+        <div class="flex flex-wrap gap-6" id="photoStripGrid"></div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Why Stay With Us — 3 Cards</p>
+      <div class="bg-white border border-stone-200 p-6">
+        <div class="grid md:grid-cols-3 gap-6" id="highlightsGrid"></div>
+      </div>
+    </section>
+
+    <!-- Pull quote -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Pull Quote</p>
+      <div class="bg-white border border-stone-200 p-6">
+        <label class="cms-label">Quote Text</label>
+        <textarea id="quote" class="cms-textarea" rows="3"></textarea>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Call to Action Section</p>
+      <div class="bg-white border border-stone-200 p-6 space-y-5">
+        <div>
+          <label class="cms-label">Heading <span class="normal-case text-stone-400">(use &lt;br&gt; for line breaks)</span></label>
+          <input type="text" id="cta.heading" class="cms-input" />
+        </div>
+        <div>
+          <label class="cms-label">Body Text</label>
+          <textarea id="cta.body" class="cms-textarea" rows="2"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer description -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Footer Description</p>
+      <div class="bg-white border border-stone-200 p-6">
+        <textarea id="footer.description" class="cms-textarea" rows="3"></textarea>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- PRICING panel -->
+  <div id="panel-pricing" class="panel space-y-10">
+
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Seasonal Pricing</p>
+      <div class="bg-white border border-stone-200 p-6">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b border-stone-200">
+                <th class="cms-label text-left pb-3 pr-4">Season</th>
+                <th class="cms-label text-left pb-3 pr-4">Period (use \n for line break)</th>
+                <th class="cms-label text-left pb-3 pr-4">Per Night</th>
+                <th class="cms-label text-left pb-3">Per Week</th>
+              </tr>
+            </thead>
+            <tbody id="pricingTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Booking Conditions</p>
+      <div class="bg-white border border-stone-200 p-6 space-y-4" id="bookingGrid"></div>
+    </section>
+
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">What's Included</p>
+      <div class="bg-white border border-stone-200 p-6">
+        <div class="grid grid-cols-2 gap-3" id="includedGrid"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- CONTACT panel -->
+  <div id="panel-contact" class="panel space-y-10">
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Contact Details</p>
+      <div class="bg-white border border-stone-200 p-6 space-y-5">
+        <div>
+          <label class="cms-label">Address (use \n for line breaks)</label>
+          <textarea id="contact.address" class="cms-textarea" rows="3"></textarea>
+        </div>
+        <div>
+          <label class="cms-label">Telephone</label>
+          <input type="text" id="contact.phone" class="cms-input" />
+        </div>
+        <div>
+          <label class="cms-label">Email Address</label>
+          <input type="email" id="contact.email" class="cms-input" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- IMAGES panel -->
+  <div id="panel-images" class="panel space-y-10">
+
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Hero Image</p>
+      <div class="bg-white border border-stone-200 p-6">
+        <p class="text-xs text-stone-500 mb-4">Click a thumbnail to select it as the hero image. Upload new images below.</p>
+        <div id="heroImgGrid" class="flex flex-wrap gap-2 mb-4 max-h-64 overflow-y-auto"></div>
+        <label class="cursor-pointer inline-flex items-center gap-2 text-[10px] tracking-[0.15em] uppercase border border-stone-300 px-4 py-2 hover:border-stone-900 transition-colors">
+          <span>Upload Image</span>
+          <input type="file" accept="image/*" class="hidden" onchange="uploadAndRefresh(this,'hero')">
+        </label>
+      </div>
+    </section>
+
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Home Page Photo Strip (3 images)</p>
+      <div class="bg-white border border-stone-200 p-6">
+        <p class="text-xs text-stone-500 mb-4">Click a thumbnail to assign it to a slot.</p>
+        <div class="flex gap-6 mb-4 flex-wrap" id="stripSlotsWrap"></div>
+        <div id="stripImgGrid" class="flex flex-wrap gap-2 max-h-64 overflow-y-auto"></div>
+        <label class="cursor-pointer mt-3 inline-flex items-center gap-2 text-[10px] tracking-[0.15em] uppercase border border-stone-300 px-4 py-2 hover:border-stone-900 transition-colors">
+          <span>Upload Image</span>
+          <input type="file" accept="image/*" class="hidden" onchange="uploadAndRefresh(this,'strip')">
+        </label>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- GALLERY panel -->
+  <div id="panel-gallery" class="panel space-y-6">
+    <p class="text-sm text-stone-500">Drag images to reorder them. Click × to remove. Use the upload button to add new photos.</p>
+    <div class="bg-white border border-stone-200 p-6">
+      <div id="galleryGrid" class="flex flex-wrap gap-3 min-h-16"></div>
+      <div class="mt-6 pt-6 border-t border-stone-100">
+        <label class="cursor-pointer inline-flex items-center gap-2 text-[10px] tracking-[0.15em] uppercase border border-stone-300 px-4 py-2 hover:border-stone-900 transition-colors">
+          <span>Upload Images</span>
+          <input type="file" accept="image/*" multiple class="hidden" onchange="uploadGalleryImages(this)">
+        </label>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ────────────────────────────────────────────────────── */
+/*  State                                                 */
+/* ────────────────────────────────────────────────────── */
+let content = {};
+let password = '';
+let allImages = [];
+let activeStripSlot = null;
+let activeHeroSelect = false;
+
+/* ────────────────────────────────────────────────────── */
+/*  Login                                                 */
+/* ────────────────────────────────────────────────────── */
+document.getElementById('pwInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doLogin();
+});
+
+async function doLogin() {
+  const pw = document.getElementById('pwInput').value;
+  const res = await fetch('/api/content', {
+    headers: { 'Authorization': 'Bearer ' + pw }
+  });
+  if (res.ok) {
+    password = pw;
+    content = await res.json();
+    document.getElementById('loginScreen').style.display = 'none';
+    await loadImages();
+    populate();
+  } else {
+    document.getElementById('loginError').classList.remove('hidden');
+  }
+}
+
+/* ────────────────────────────────────────────────────── */
+/*  Tabs                                                  */
+/* ────────────────────────────────────────────────────── */
+function switchTab(name, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ────────────────────────────────────────────────────── */
+/*  Helpers                                               */
+/* ────────────────────────────────────────────────────── */
+function getPath(obj, path) {
+  return path.split('.').reduce((o, k) => (o != null ? o[k] : undefined), obj);
+}
+function setPath(obj, path, val) {
+  const keys = path.split('.');
+  let cur = obj;
+  for (let i = 0; i < keys.length - 1; i++) {
+    if (cur[keys[i]] === undefined) cur[keys[i]] = {};
+    cur = cur[keys[i]];
+  }
+  cur[keys[keys.length - 1]] = val;
+}
+
+function showToast(msg, error) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.background = error ? '#991b1b' : '#1a1610';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+function apiHeaders() {
+  return { 'Authorization': 'Bearer ' + password, 'Content-Type': 'application/json' };
+}
+
+/* ────────────────────────────────────────────────────── */
+/*  Populate fields from content                          */
+/* ────────────────────────────────────────────────────── */
+function populate() {
+  // Simple text / textarea inputs
+  const simpleKeys = [
+    'hero.tagline','about.heading','about.para1','about.para2',
+    'quote','cta.heading','cta.body','footer.description',
+    'contact.address','contact.phone','contact.email'
+  ];
+  simpleKeys.forEach(k => {
+    const el = document.getElementById(k);
+    if (el) el.value = getPath(content, k) || '';
+  });
+
+  // Hero image path display
+  document.getElementById('heroImgPath').textContent = content.hero?.image || '';
+
+  // Stats
+  const sg = document.getElementById('statsGrid');
+  sg.innerHTML = '';
+  (content.stats || []).forEach((val, i) => {
+    sg.insertAdjacentHTML('beforeend', `
+      <div>
+        <label class="cms-label">Stat ${i + 1}</label>
+        <input type="text" data-key="stats.${i}" value="${val}" class="cms-input" />
+      </div>`);
+  });
+
+  // Specs
+  const specG = document.getElementById('specsGrid');
+  specG.innerHTML = '';
+  (content.specs || []).forEach((s, i) => {
+    specG.insertAdjacentHTML('beforeend', `
+      <div class="flex gap-4 items-end border-b border-stone-100 pb-3">
+        <div class="w-36 flex-shrink-0">
+          <label class="cms-label">Label</label>
+          <input type="text" data-key="specs.${i}.label" value="${escHtml(s.label)}" class="cms-input" />
+        </div>
+        <div class="flex-1">
+          <label class="cms-label">Value</label>
+          <input type="text" data-key="specs.${i}.value" value="${escHtml(s.value)}" class="cms-input" />
+        </div>
+      </div>`);
+  });
+
+  // Photo strip
+  renderPhotoStrip();
+
+  // Highlights
+  const hg = document.getElementById('highlightsGrid');
+  hg.innerHTML = '';
+  (content.highlights || []).forEach((h, i) => {
+    hg.insertAdjacentHTML('beforeend', `
+      <div class="space-y-3">
+        <div>
+          <label class="cms-label">Card ${i + 1} — Title</label>
+          <input type="text" data-key="highlights.${i}.title" value="${escHtml(h.title)}" class="cms-input" />
+        </div>
+        <div>
+          <label class="cms-label">Description</label>
+          <textarea data-key="highlights.${i}.desc" class="cms-textarea" rows="3">${escHtml(h.desc)}</textarea>
+        </div>
+      </div>`);
+  });
+
+  // Pricing table
+  const pt = document.getElementById('pricingTable');
+  pt.innerHTML = '';
+  const seasons = ['peak','mid','low','christmas'];
+  const labels  = ['Peak','Mid','Low','Christmas'];
+  seasons.forEach((s, i) => {
+    const p = content.pricing?.[s] || {};
+    pt.insertAdjacentHTML('beforeend', `
+      <tr class="border-b border-stone-100">
+        <td class="py-3 pr-4 text-sm font-light text-stone-700">${labels[i]}</td>
+        <td class="py-3 pr-4"><input type="text" data-key="pricing.${s}.period" value="${escHtml(p.period||'')}" class="cms-input" /></td>
+        <td class="py-3 pr-4"><input type="text" data-key="pricing.${s}.night" value="${escHtml(p.night||'')}" class="cms-input" style="max-width:80px" /></td>
+        <td class="py-3"><input type="text" data-key="pricing.${s}.week" value="${escHtml(p.week||'')}" class="cms-input" style="max-width:90px" /></td>
+      </tr>`);
+  });
+
+  // Booking conditions
+  const bg = document.getElementById('bookingGrid');
+  bg.innerHTML = '';
+  (content.bookingConditions || []).forEach((c, i) => {
+    bg.insertAdjacentHTML('beforeend', `
+      <div class="flex gap-4 items-end border-b border-stone-100 pb-3">
+        <div class="w-32 flex-shrink-0">
+          <label class="cms-label">Label</label>
+          <input type="text" data-key="bookingConditions.${i}.label" value="${escHtml(c.label)}" class="cms-input" />
+        </div>
+        <div class="flex-1">
+          <label class="cms-label">Value</label>
+          <input type="text" data-key="bookingConditions.${i}.value" value="${escHtml(c.value)}" class="cms-input" />
+        </div>
+      </div>`);
+  });
+
+  // Included items
+  const ig = document.getElementById('includedGrid');
+  ig.innerHTML = '';
+  (content.included || []).forEach((item, i) => {
+    ig.insertAdjacentHTML('beforeend', `
+      <div>
+        <label class="cms-label">Item ${i + 1}</label>
+        <input type="text" data-key="included.${i}" value="${escHtml(item)}" class="cms-input" />
+      </div>`);
+  });
+
+  // Gallery
+  renderGallery();
+
+  // Image pickers
+  renderHeroGrid();
+  renderStripGrid();
+}
+
+function escHtml(str) {
+  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ────────────────────────────────────────────────────── */
+/*  Photo strip render                                    */
+/* ────────────────────────────────────────────────────── */
+function renderPhotoStrip() {
+  const pg = document.getElementById('photoStripGrid');
+  pg.innerHTML = '';
+  (content.photoStrip || ['','','']).forEach((src, i) => {
+    pg.insertAdjacentHTML('beforeend', `
+      <div class="text-center">
+        <label class="cms-label mb-2">Photo ${i + 1}</label>
+        <img src="${src}" style="width:120px;height:90px;object-fit:cover;border:1px solid #ddd" onerror="this.style.background='#eee'" />
+        <div class="mt-2">
+          <button onclick="openStripPicker(${i})"
+            class="text-[9px] tracking-[.15em] uppercase border border-stone-300 px-3 py-1 hover:border-stone-900 transition-colors cursor-pointer bg-transparent font-sans">
+            Change
+          </button>
+        </div>
+      </div>`);
+  });
+}
+
+/* ────────────────────────────────────────────────────── */
+/*  Gallery                                               */
+/* ────────────────────────────────────────────────────── */
+function renderGallery() {
+  const gg = document.getElementById('galleryGrid');
+  gg.innerHTML = '';
+  (content.gallery || []).forEach((src, i) => {
+    const div = document.createElement('div');
+    div.className = 'gallery-thumb';
+    div.draggable = true;
+    div.dataset.index = i;
+    div.innerHTML = `<img src="${src}" /><button class="del" onclick="removeGalleryImg(${i})">×</button>`;
+    div.addEventListener('dragstart', onDragStart);
+    div.addEventListener('dragover',  e => { e.preventDefault(); div.classList.add('drag-over'); });
+    div.addEventListener('dragleave', () => div.classList.remove('drag-over'));
+    div.addEventListener('drop',      e => { e.preventDefault(); div.classList.remove('drag-over'); onDrop(i); });
+    gg.appendChild(div);
+  });
+}
+
+let dragSrc = null;
+function onDragStart(e) { dragSrc = parseInt(this.dataset.index); }
+function onDrop(destIdx) {
+  if (dragSrc === null || dragSrc === destIdx) return;
+  const arr = content.gallery;
+  const item = arr.splice(dragSrc, 1)[0];
+  arr.splice(destIdx, 0, item);
+  renderGallery();
+}
+function removeGalleryImg(i) {
+  content.gallery.splice(i, 1);
+  renderGallery();
+}
+
+/* ────────────────────────────────────────────────────── */
+/*  Image pickers                                         */
+/* ────────────────────────────────────────────────────── */
+async function loadImages() {
+  const res = await fetch('/api/images', { headers: { 'Authorization': 'Bearer ' + password } });
+  allImages = await res.json();
+}
+
+function renderHeroGrid() {
+  const grid = document.getElementById('heroImgGrid');
+  grid.innerHTML = '';
+  allImages.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.className = 'thumb' + (src === content.hero?.image ? ' selected' : '');
+    img.title = src;
+    img.onclick = () => {
+      setPath(content, 'hero.image', src);
+      document.getElementById('heroImgPath').textContent = src;
+      grid.querySelectorAll('.thumb').forEach(t => t.classList.remove('selected'));
+      img.classList.add('selected');
+      // Also sync small hero thumb in Home tab
+      renderHeroThumb();
+    };
+    grid.appendChild(img);
+  });
+}
+
+function renderHeroThumb() {
+  const wrap = document.getElementById('heroThumbWrap');
+  wrap.innerHTML = '';
+  const src = content.hero?.image;
+  if (src) {
+    wrap.insertAdjacentHTML('beforeend',
+      `<img src="${src}" style="height:60px;width:80px;object-fit:cover;border:1px solid #ddd">`);
+  }
+}
+
+function renderStripSlots() {
+  const wrap = document.getElementById('stripSlotsWrap');
+  wrap.innerHTML = '';
+  (content.photoStrip || ['','','']).forEach((src, i) => {
+    wrap.insertAdjacentHTML('beforeend', `
+      <div class="text-center">
+        <div class="cms-label mb-1">Slot ${i + 1}</div>
+        <img src="${src}" id="stripSlot-${i}"
+          style="width:100px;height:75px;object-fit:cover;border:2px solid ${activeStripSlot===i?'#2e5e33':'#ddd'};cursor:pointer"
+          onclick="setActiveStripSlot(${i})"
+          onerror="this.style.background='#eee'" />
+      </div>`);
+  });
+}
+
+function setActiveStripSlot(i) {
+  activeStripSlot = i;
+  renderStripSlots();
+}
+
+function renderStripGrid() {
+  renderStripSlots();
+  const grid = document.getElementById('stripImgGrid');
+  grid.innerHTML = '';
+  allImages.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.className = 'thumb';
+    if (content.photoStrip?.includes(src)) img.classList.add('selected');
+    img.onclick = () => {
+      if (activeStripSlot === null) {
+        showToast('Click a slot above first', true);
+        return;
+      }
+      if (!content.photoStrip) content.photoStrip = ['','',''];
+      content.photoStrip[activeStripSlot] = src;
+      renderPhotoStrip();
+      renderStripSlots();
+      renderStripGrid();
+    };
+    grid.appendChild(img);
+  });
+}
+
+function openStripPicker(i) {
+  switchTab('images', document.querySelector('[onclick*="images"]'));
+  setActiveStripSlot(i);
+  renderStripSlots();
+  document.getElementById('stripImgGrid').scrollIntoView({ behavior: 'smooth' });
+}
+
+/* ────────────────────────────────────────────────────── */
+/*  Upload helpers                                        */
+/* ────────────────────────────────────────────────────── */
+async function uploadFile(file) {
+  const fd = new FormData();
+  fd.append('image', file);
+  const res = await fetch('/api/upload', {
+    method: 'POST',
+    headers: { 'Authorization': 'Bearer ' + password },
+    body: fd
+  });
+  if (!res.ok) throw new Error('Upload failed');
+  const data = await res.json();
+  return data.path;
+}
+
+async function uploadHero(input) {
+  try {
+    const path = await uploadFile(input.files[0]);
+    await loadImages();
+    setPath(content, 'hero.image', path);
+    document.getElementById('heroImgPath').textContent = path;
+    renderHeroThumb();
+    renderHeroGrid();
+    showToast('Image uploaded');
+  } catch (e) { showToast('Upload failed', true); }
+  input.value = '';
+}
+
+async function uploadAndRefresh(input, section) {
+  try {
+    const path = await uploadFile(input.files[0]);
+    await loadImages();
+    if (section === 'hero') { renderHeroGrid(); }
+    if (section === 'strip') { renderStripGrid(); }
+    showToast('Image uploaded');
+  } catch (e) { showToast('Upload failed', true); }
+  input.value = '';
+}
+
+async function uploadGalleryImages(input) {
+  try {
+    for (const file of input.files) {
+      const p = await uploadFile(file);
+      content.gallery.push(p);
+    }
+    await loadImages();
+    renderGallery();
+    showToast(`${input.files.length} image(s) added`);
+  } catch (e) { showToast('Upload failed', true); }
+  input.value = '';
+}
+
+/* ────────────────────────────────────────────────────── */
+/*  Collect form values → content object                 */
+/* ────────────────────────────────────────────────────── */
+function collectFormValues() {
+  // Simple IDs
+  const simpleKeys = [
+    'hero.tagline','about.heading','about.para1','about.para2',
+    'quote','cta.heading','cta.body','footer.description',
+    'contact.address','contact.phone','contact.email'
+  ];
+  simpleKeys.forEach(k => {
+    const el = document.getElementById(k);
+    if (el) setPath(content, k, el.value);
+  });
+
+  // data-key inputs/textareas
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.dataset.key;
+    const val = el.value;
+    // Handle array index paths like "stats.2"
+    const parts = key.split('.');
+    let obj = content;
+    for (let i = 0; i < parts.length - 1; i++) {
+      const k = isNaN(parts[i]) ? parts[i] : parseInt(parts[i]);
+      if (obj[k] === undefined) obj[k] = {};
+      obj = obj[k];
+    }
+    const last = parts[parts.length - 1];
+    obj[isNaN(last) ? last : parseInt(last)] = val;
+  });
+}
+
+/* ────────────────────────────────────────────────────── */
+/*  Save                                                  */
+/* ────────────────────────────────────────────────────── */
+async function saveAll() {
+  collectFormValues();
+  const btn = document.getElementById('saveBtn');
+  btn.textContent = 'Saving…';
+  btn.disabled = true;
+  try {
+    const res = await fetch('/api/content', {
+      method: 'POST',
+      headers: apiHeaders(),
+      body: JSON.stringify(content)
+    });
+    if (!res.ok) throw new Error(await res.text());
+    showToast('Saved — HTML files updated ✓');
+  } catch (e) {
+    showToast('Save failed: ' + e.message, true);
+  } finally {
+    btn.textContent = 'Save Changes';
+    btn.disabled = false;
+  }
+}
+</script>
+</body>
+</html>
