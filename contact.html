@@ -13,7 +13,7 @@
         extend: {
           colors: {
             cream: { DEFAULT:'#f5f0e6', 50:'#fdfbf7', 200:'#ede5d3', 300:'#d9d0c0' },
-            forest: { 300:'#73a477', 400:'#4a8050', 500:'#2e5e33', 600:'#1e4523', 700:'#122d16', 800:'#0a1c0c', 900:'#070f08' },
+            forest: { 300:'#7ba3b5', 400:'#4e839a', 500:'#2e6480', 600:'#1e4a60', 700:'#143345', 800:'#0c2030', 900:'#081520' },
             stone: { 50:'#faf8f4', 100:'#f0ece4', 200:'#ddd6c8', 300:'#c5bba9', 400:'#a8998a', 500:'#8a7a6c', 600:'#6e6254', 700:'#52483d', 800:'#36302a', 900:'#1a1610' }
           },
           fontFamily: {
@@ -38,8 +38,8 @@
       <ul class="hidden md:flex items-center gap-10 list-none m-0 p-0">
         <li><a href="index.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Home</a></li>
         <li><a href="images.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Gallery</a></li>
-        <li><a href="contact.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-900 border-b border-stone-900 pb-px">Prices &amp; Enquiries</a></li>
-        <li><a href="contact.html" class="text-[11px] tracking-[0.18em] uppercase border border-stone-900 text-stone-900 px-6 py-2.5 hover:bg-stone-900 hover:text-cream transition-colors">Enquire</a></li>
+        <li><a href="local-area.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Local Area</a></li>
+        <li><a href="contact.html" class="text-[11px] tracking-[0.18em] uppercase border border-stone-900 text-stone-900 px-6 py-2.5 hover:bg-stone-900 hover:text-cream transition-colors">Prices &amp; Enquiries</a></li>
       </ul>
       <button id="hamburger" class="md:hidden flex flex-col gap-[5px] p-1 bg-transparent border-none cursor-pointer" aria-label="Toggle menu">
         <span class="block w-5 h-px bg-stone-900"></span>
@@ -50,8 +50,8 @@
     <ul id="navLinks" class="hidden flex-col list-none m-0 px-8 pb-6 gap-5 border-t border-stone-200 bg-cream-50">
       <li class="pt-5"><a href="index.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500">Home</a></li>
       <li><a href="images.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500">Gallery</a></li>
-      <li><a href="contact.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-900">Prices &amp; Enquiries</a></li>
-      <li class="pb-1"><a href="contact.html" class="inline-block border border-stone-900 text-[11px] tracking-[0.18em] uppercase text-stone-900 px-6 py-2.5">Enquire</a></li>
+      <li><a href="local-area.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500">Local Area</a></li>
+      <li class="pb-1"><a href="contact.html" class="inline-block border border-stone-900 text-[11px] tracking-[0.18em] uppercase text-stone-900 px-6 py-2.5">Prices &amp; Enquiries</a></li>
     </ul>
   </nav>
 
@@ -73,43 +73,38 @@
         <div>
           <p class="text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-6">Our Rates</p>
           <h2 class="font-serif font-light text-stone-900 mb-2" style="font-size:clamp(1.8rem,3vw,2.75rem)">Seasonal Pricing</h2>
-          <p class="text-stone-500 font-light text-sm leading-relaxed mb-12">All rates are per night or per week. Minimum stays apply during peak season.</p>
+          <p class="text-stone-500 font-light text-sm leading-relaxed mb-12">All rates are per week. Minimum stays apply during peak season.</p>
 
           <!-- Typographic pricing table -->
           <div class="border-t border-stone-300">
             <!-- Header -->
-            <div class="grid grid-cols-10 py-3 border-b border-stone-300">
+            <div class="grid grid-cols-8 py-3 border-b border-stone-300">
               <div class="col-span-3 text-[10px] tracking-[0.2em] uppercase text-stone-400">Season</div>
               <div class="col-span-3 text-[10px] tracking-[0.2em] uppercase text-stone-400 hidden sm:block">Period</div>
-              <div class="col-span-2 text-[10px] tracking-[0.2em] uppercase text-stone-400 text-right">Night</div>
               <div class="col-span-2 text-[10px] tracking-[0.2em] uppercase text-stone-400 text-right">Week</div>
             </div>
             <!-- Peak -->
-            <div class="grid grid-cols-10 py-6 border-b border-stone-200 items-baseline">
+            <div class="grid grid-cols-8 py-6 border-b border-stone-200 items-baseline">
               <div class="col-span-3 font-serif font-light text-2xl text-stone-900">Peak</div>
               <div data-cms="pricing.peak.period" class="col-span-3 text-sm text-stone-400 font-light hidden sm:block">July – AugustSchool Holidays</div>
-              <div data-cms="pricing.peak.night" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£195</div>
               <div data-cms="pricing.peak.week" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£1,295</div>
             </div>
             <!-- Mid -->
-            <div class="grid grid-cols-10 py-6 border-b border-stone-200 items-baseline">
+            <div class="grid grid-cols-8 py-6 border-b border-stone-200 items-baseline">
               <div class="col-span-3 font-serif font-light text-2xl text-stone-900">Mid</div>
               <div data-cms="pricing.mid.period" class="col-span-3 text-sm text-stone-400 font-light hidden sm:block">Apr – JunSep – Oct</div>
-              <div data-cms="pricing.mid.night" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£150</div>
               <div data-cms="pricing.mid.week" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£995</div>
             </div>
             <!-- Low -->
-            <div class="grid grid-cols-10 py-6 border-b border-stone-200 items-baseline">
+            <div class="grid grid-cols-8 py-6 border-b border-stone-200 items-baseline">
               <div class="col-span-3 font-serif font-light text-2xl text-stone-900">Low</div>
               <div data-cms="pricing.low.period" class="col-span-3 text-sm text-stone-400 font-light hidden sm:block">Nov – Marexcl. Christmas</div>
-              <div data-cms="pricing.low.night" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£110</div>
               <div data-cms="pricing.low.week" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£695</div>
             </div>
             <!-- Christmas -->
-            <div class="grid grid-cols-10 py-6 items-baseline">
+            <div class="grid grid-cols-8 py-6 items-baseline">
               <div class="col-span-3 font-serif font-light text-2xl text-stone-900">Christmas</div>
               <div data-cms="pricing.christmas.period" class="col-span-3 text-sm text-stone-400 font-light hidden sm:block">23 Dec – 2 Jan</div>
-              <div data-cms="pricing.christmas.night" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£220</div>
               <div data-cms="pricing.christmas.week" class="col-span-2 font-serif font-light text-2xl text-stone-900 text-right">£1,450</div>
             </div>
           </div>
@@ -207,7 +202,12 @@ East Sussex, TN34</span>
           </div>
 
           <!-- Form -->
-          <form class="space-y-7" name="enquiry">
+          <form id="enquiryForm" class="space-y-7" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="c191e9d9-40e1-4731-89e1-fc5696b5fa9d">
+            <input type="hidden" name="subject" value="New enquiry — The Blue House Tackleway">
+            <input type="hidden" name="cc" value="Annalouiselucas@yahoo.co.uk">
+            <input type="hidden" name="from_name" value="Blue House Tackleway Website">
+            <input type="text" name="botcheck" style="display:none">
             <div class="grid sm:grid-cols-2 gap-7">
               <div>
                 <label class="block text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-2">Full Name</label>
@@ -294,11 +294,7 @@ East Sussex, TN34</span>
     <div class="max-w-7xl mx-auto px-8">
       <p class="text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-4">Find Us</p>
       <h2 class="font-serif font-light text-stone-900 mb-8" style="font-size:clamp(1.8rem,3vw,2.5rem)">Tackleway, Hastings</h2>
-      <!-- Replace with a Google Maps iframe -->
-      <div class="w-full h-64 bg-gradient-to-br from-forest-800 to-forest-900 flex flex-col items-center justify-center gap-3 text-white/40">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        <p class="text-[11px] tracking-[0.2em] uppercase">Add a Google Maps embed here</p>
-      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2520.5!2d0.5953418!3d50.8575676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1709000000000" width="100%" height="400" style="border:0; filter:grayscale(100%) contrast(0.9);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full"></iframe>
     </div>
   </div>
 
@@ -339,7 +335,68 @@ East Sussex, TN34</li>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- Thank You Modal -->
+  <div id="thankYouModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-stone-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-cream-50 max-w-md w-full mx-6 p-12 text-center relative">
+      <div class="w-12 h-12 rounded-full bg-forest-500 flex items-center justify-center mx-auto mb-6">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h3 class="font-serif font-light text-3xl text-stone-900 mb-3">Thank You</h3>
+      <p class="text-stone-500 font-light text-sm leading-relaxed mb-2">Your enquiry has been sent successfully.</p>
+      <p class="text-stone-500 font-light text-sm leading-relaxed mb-8">We'll get back to you within 24 hours.</p>
+      <button id="closeModal" class="inline-flex items-center gap-3 bg-stone-900 text-white text-[11px] tracking-[0.18em] uppercase px-8 py-3.5 hover:bg-stone-800 transition-colors border-none cursor-pointer font-sans font-light">
+        Close
+      </button>
+    </div>
+  </div>
 
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      const form = document.getElementById('enquiryForm');
+      const modal = document.getElementById('thankYouModal');
+      const closeBtn = document.getElementById('closeModal');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const btnText = submitBtn.innerHTML;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending… <span class="text-base leading-none">→</span>';
+
+        fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form)))
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data.success) {
+            form.reset();
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+          } else {
+            alert('Something went wrong. Please try emailing us directly.');
+          }
+        })
+        .catch(function() {
+          alert('Something went wrong. Please try emailing us directly.');
+        })
+        .finally(function() {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = btnText;
+        });
+      });
+
+      closeBtn.addEventListener('click', function() {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+      });
+
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) modal.classList.add('opacity-0', 'pointer-events-none');
+      });
+    })();
+  </script>
 
 </body></html>

@@ -142,6 +142,7 @@
     <button class="tab-btn active text-[10px] tracking-[0.15em] uppercase px-5 py-4 border-b-2 border-stone-900 text-stone-900" onclick="switchTab('home',this)">Home</button>
     <button class="tab-btn text-[10px] tracking-[0.15em] uppercase px-5 py-4 border-b-2 border-transparent text-stone-500 hover:text-stone-900" onclick="switchTab('pricing',this)">Pricing</button>
     <button class="tab-btn text-[10px] tracking-[0.15em] uppercase px-5 py-4 border-b-2 border-transparent text-stone-500 hover:text-stone-900" onclick="switchTab('contact',this)">Contact</button>
+    <button class="tab-btn text-[10px] tracking-[0.15em] uppercase px-5 py-4 border-b-2 border-transparent text-stone-500 hover:text-stone-900" onclick="switchTab('localarea',this)">Local Area</button>
     <button class="tab-btn text-[10px] tracking-[0.15em] uppercase px-5 py-4 border-b-2 border-transparent text-stone-500 hover:text-stone-900" onclick="switchTab('images',this)">Images</button>
     <button class="tab-btn text-[10px] tracking-[0.15em] uppercase px-5 py-4 border-b-2 border-transparent text-stone-500 hover:text-stone-900" onclick="switchTab('gallery',this)">Gallery</button>
   </div>
@@ -313,6 +314,69 @@
         </div>
       </div>
     </section>
+  </div>
+
+  <!-- LOCAL AREA panel -->
+  <div id="panel-localarea" class="panel space-y-10">
+
+    <!-- Hero -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Hero</p>
+      <div class="bg-white border border-stone-200 p-6 space-y-5">
+        <div>
+          <label class="cms-label">Hero Image</label>
+          <div class="text-xs text-stone-500 mb-2" id="laHeroImgPath"></div>
+          <div id="laHeroThumbWrap" class="mb-3"></div>
+          <label class="cursor-pointer inline-flex items-center gap-2 text-[10px] tracking-[0.15em] uppercase border border-stone-300 px-4 py-2 hover:border-stone-900 transition-colors">
+            <span>Change Image</span>
+            <input type="file" accept="image/*" class="hidden" onchange="uploadLAHero(this)">
+          </label>
+        </div>
+        <div>
+          <label class="cms-label">Intro Tagline</label>
+          <textarea id="la-heroTagline" class="cms-textarea" rows="2"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beach -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Beach &amp; Coast</p>
+      <div class="bg-white border border-stone-200 p-6 space-y-6" id="la-beach-grid"></div>
+    </section>
+
+    <!-- Eat & Drink -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Eat &amp; Drink</p>
+      <div class="bg-white border border-stone-200 p-6 space-y-6" id="la-eat-grid"></div>
+    </section>
+
+    <!-- Culture -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Culture &amp; History</p>
+      <div class="bg-white border border-stone-200 p-6 space-y-6" id="la-culture-grid"></div>
+    </section>
+
+    <!-- Walks -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Walks &amp; Outdoors</p>
+      <div class="bg-white border border-stone-200 p-6 space-y-6" id="la-walks-grid"></div>
+    </section>
+
+    <!-- Day Trips -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Day Trips</p>
+      <div class="bg-white border border-stone-200 p-6 space-y-6" id="la-daytrips-grid"></div>
+    </section>
+
+    <!-- Quote -->
+    <section>
+      <p class="cms-label mb-4" style="font-size:10px;letter-spacing:.25em;color:#8a7a6c">Pull Quote</p>
+      <div class="bg-white border border-stone-200 p-6">
+        <textarea id="la-quote" class="cms-textarea" rows="2"></textarea>
+      </div>
+    </section>
+
   </div>
 
   <!-- IMAGES panel -->
@@ -550,6 +614,66 @@ function populate() {
   // Image pickers
   renderHeroGrid();
   renderStripGrid();
+
+  // Local Area
+  populateLocalArea();
+}
+
+/* ────────────────────────────────────────────────────── */
+/*  Local Area populate                                   */
+/* ────────────────────────────────────────────────────── */
+function populateLocalArea() {
+  const la = content.localArea || {};
+
+  // Hero
+  const laPath = document.getElementById('laHeroImgPath');
+  if (laPath) laPath.textContent = la.heroImage || '';
+  const laThumb = document.getElementById('laHeroThumbWrap');
+  if (laThumb) {
+    const src = la.heroImage;
+    laThumb.innerHTML = src
+      ? `<img src="${src}" style="height:60px;width:80px;object-fit:cover;border:1px solid #ddd">`
+      : '';
+  }
+  const laTag = document.getElementById('la-heroTagline');
+  if (laTag) laTag.value = la.heroTagline || '';
+
+  // Section grids
+  renderLASection('la-beach-grid',    la.beach    || [], true);
+  renderLASection('la-eat-grid',      la.eat      || [], true);
+  renderLASection('la-culture-grid',  la.culture  || [], false);
+  renderLASection('la-walks-grid',    la.walks    || [], true);
+  renderLASection('la-daytrips-grid', la.daytrips || [], true);
+
+  // Quote
+  const laQ = document.getElementById('la-quote');
+  if (laQ) laQ.value = la.quote || '';
+}
+
+function renderLASection(gridId, items, hasTag) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  grid.innerHTML = '';
+  items.forEach((item, i) => {
+    const section = gridId.replace('la-','').replace('-grid','');
+    grid.insertAdjacentHTML('beforeend', `
+      <div class="border-b border-stone-100 pb-5 last:border-0 last:pb-0">
+        <div class="flex gap-4 mb-3 items-end">
+          <div class="flex-1">
+            <label class="cms-label">Name</label>
+            <input type="text" data-key="localArea.${section}.${i}.name" value="${escHtml(item.name||'')}" class="cms-input" />
+          </div>
+          ${hasTag ? `<div class="w-36 flex-shrink-0">
+            <label class="cms-label">Tag / Distance</label>
+            <input type="text" data-key="localArea.${section}.${i}.tag" value="${escHtml(item.tag||'')}" class="cms-input" />
+          </div>` : ''}
+        </div>
+        <div>
+          <label class="cms-label">Description</label>
+          <textarea data-key="localArea.${section}.${i}.desc" class="cms-textarea" rows="2">${escHtml(item.desc||'')}</textarea>
+        </div>
+      </div>`);
+  });
 }
 
 function escHtml(str) {
@@ -740,6 +864,19 @@ async function uploadAndRefresh(input, section) {
   input.value = '';
 }
 
+async function uploadLAHero(input) {
+  try {
+    const path = await uploadFile(input.files[0]);
+    await loadImages();
+    setPath(content, 'localArea.heroImage', path);
+    document.getElementById('laHeroImgPath').textContent = path;
+    document.getElementById('laHeroThumbWrap').innerHTML =
+      `<img src="${path}" style="height:60px;width:80px;object-fit:cover;border:1px solid #ddd" class="mb-3">`;
+    showToast('Hero image updated');
+  } catch (e) { showToast('Upload failed', true); }
+  input.value = '';
+}
+
 async function uploadGalleryImages(input) {
   try {
     for (const file of input.files) {
@@ -767,6 +904,12 @@ function collectFormValues() {
     const el = document.getElementById(k);
     if (el) setPath(content, k, el.value);
   });
+
+  // Local Area simple fields
+  const laTagline = document.getElementById('la-heroTagline');
+  if (laTagline) setPath(content, 'localArea.heroTagline', laTagline.value);
+  const laQuote = document.getElementById('la-quote');
+  if (laQuote) setPath(content, 'localArea.quote', laQuote.value);
 
   // data-key inputs/textareas
   document.querySelectorAll('[data-key]').forEach(el => {

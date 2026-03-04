@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Things to Do — The Blue House Tackleway, Hastings</title>
+  <meta name="description" content="Discover the best things to do near The Blue House Tackleway. Our guide to Hastings Old Town, the beach, local restaurants, walks, and nearby day trips.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { DEFAULT:'#f5f0e6', 50:'#fdfbf7', 200:'#ede5d3', 300:'#d9d0c0' },
+            forest: { 300:'#7ba3b5', 400:'#4e839a', 500:'#2e6480', 600:'#1e4a60', 700:'#143345', 800:'#0c2030', 900:'#081520' },
+            stone: { 50:'#faf8f4', 100:'#f0ece4', 200:'#ddd6c8', 300:'#c5bba9', 400:'#a8998a', 500:'#8a7a6c', 600:'#6e6254', 700:'#52483d', 800:'#36302a', 900:'#1a1610' }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Jost', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="font-sans font-light text-stone-900 bg-cream-50 antialiased">
+
+  <!-- ── Navigation ── -->
+  <nav class="sticky top-0 z-50 bg-cream-50 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-8 h-[72px] flex items-center justify-between">
+      <a href="index.html" class="group">
+        <div class="font-serif font-light text-[22px] text-stone-900 leading-none tracking-wide">The Blue House</div>
+        <div class="text-[9px] tracking-[0.3em] uppercase text-stone-500 mt-0.5">Tackleway, Hastings</div>
+      </a>
+      <!-- Desktop -->
+      <ul class="hidden md:flex items-center gap-10 list-none m-0 p-0">
+        <li><a href="index.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Home</a></li>
+        <li><a href="images.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Gallery</a></li>
+        <li><a href="local-area.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-900 border-b border-stone-900 pb-px">Local Area</a></li>
+        <li>
+          <a href="contact.html" class="text-[11px] tracking-[0.18em] uppercase border border-stone-900 text-stone-900 px-6 py-2.5 hover:bg-stone-900 hover:text-cream transition-colors">
+            Prices &amp; Enquiries
+          </a>
+        </li>
+      </ul>
+      <!-- Hamburger -->
+      <button id="hamburger" class="md:hidden flex flex-col gap-[5px] p-1 bg-transparent border-none cursor-pointer" aria-label="Toggle menu">
+        <span class="block w-5 h-px bg-stone-900"></span>
+        <span class="block w-5 h-px bg-stone-900"></span>
+        <span class="block w-5 h-px bg-stone-900"></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <ul id="navLinks" class="hidden flex-col list-none m-0 px-8 pb-6 gap-5 border-t border-stone-200 bg-cream-50">
+      <li class="pt-5"><a href="index.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500">Home</a></li>
+      <li><a href="images.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-500">Gallery</a></li>
+      <li><a href="local-area.html" class="text-[11px] tracking-[0.18em] uppercase text-stone-900">Local Area</a></li>
+      <li class="pb-1"><a href="contact.html" class="inline-block border border-stone-900 text-[11px] tracking-[0.18em] uppercase text-stone-900 px-6 py-2.5">Prices &amp; Enquiries</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="relative flex items-end bg-forest-900 overflow-hidden" style="min-height:520px;height:55vh">
+    <img data-cms-src="localArea.heroImage" src="images/selected/557a9df3-d815-4df3-9b1a-000c43fe98bf.jpeg.avif" alt="Hastings Old Town" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-forest-900/50"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-8 pb-16 w-full">
+      <div class="max-w-2xl">
+        <p class="text-[10px] tracking-[0.3em] uppercase text-forest-300 mb-6">Hastings &amp; Beyond</p>
+        <h1 class="font-serif font-light text-white leading-none mb-7" style="font-size:clamp(3rem,7vw,5.5rem)">
+          Things to Do<br>in the Area
+        </h1>
+        <div class="w-12 h-px bg-forest-500 mb-7"></div>
+        <p data-cms="localArea.heroTagline" class="text-stone-300 font-light text-[15px] leading-relaxed max-w-md">From wild coastal walks and freshly landed fish to medieval ruins and hidden lanes — Hastings Old Town rewards those who explore slowly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Intro strip ── -->
+  <div class="sticky top-[72px] z-40 bg-stone-100 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-8 py-4 overflow-x-auto">
+      <ul class="flex items-center gap-0 list-none m-0 p-0 whitespace-nowrap">
+        <li class="pr-7"><a href="#beach" class="text-[10px] tracking-[0.22em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Beach &amp; Coast</a></li>
+        <li class="text-stone-300 pr-7">·</li>
+        <li class="pr-7"><a href="#eat" class="text-[10px] tracking-[0.22em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Eat &amp; Drink</a></li>
+        <li class="text-stone-300 pr-7">·</li>
+        <li class="pr-7"><a href="#culture" class="text-[10px] tracking-[0.22em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Culture &amp; History</a></li>
+        <li class="text-stone-300 pr-7">·</li>
+        <li class="pr-7"><a href="#walks" class="text-[10px] tracking-[0.22em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Walks &amp; Outdoors</a></li>
+        <li class="text-stone-300 pr-7">·</li>
+        <li><a href="#daytrips" class="text-[10px] tracking-[0.22em] uppercase text-stone-500 hover:text-stone-900 transition-colors">Day Trips</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Beach & Coast ── -->
+  <section class="bg-cream py-24" id="beach">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-14">
+        <p class="text-[10px] tracking-[0.3em] uppercase text-forest-500 mb-4">01</p>
+        <h2 class="font-serif font-light text-stone-900 leading-tight" style="font-size:clamp(2rem,4vw,3rem)">Beach &amp; Coast</h2>
+        <div class="w-10 h-px bg-stone-400 mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-px bg-stone-200">
+        <div class="bg-cream p-10">
+          <h3 data-cms="localArea.beach.0.name" class="font-serif font-light text-2xl text-stone-900 mb-3">Hastings Beach</h3>
+          <p data-cms="localArea.beach.0.desc" class="text-stone-600 font-light text-sm leading-relaxed mb-4">A classic shingle beach stretching east and west from the pier. The eastern end, known as the Stade, is home to the largest beach-launched fishing fleet in Europe — watch the boats come in and buy fish straight off the boats.</p>
+          <p data-cms="localArea.beach.0.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">3 min walk</p>
+        </div>
+        <div class="bg-cream p-10">
+          <h3 data-cms="localArea.beach.1.name" class="font-serif font-light text-2xl text-stone-900 mb-3">Rock-a-Nore</h3>
+          <p data-cms="localArea.beach.1.desc" class="text-stone-600 font-light text-sm leading-relaxed mb-4">The atmospheric stretch at the foot of the East Hill, lined with tall black net shops (for storing fishing gear), a working smokehouse, and the Fishermen's Museum. One of the most characterful corners of the whole coastline.</p>
+          <p data-cms="localArea.beach.1.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">5 min walk</p>
+        </div>
+        <div class="bg-cream p-10">
+          <h3 data-cms="localArea.beach.2.name" class="font-serif font-light text-2xl text-stone-900 mb-3">Fairlight Cove</h3>
+          <p data-cms="localArea.beach.2.desc" class="text-stone-600 font-light text-sm leading-relaxed mb-4">A quieter, more secluded beach reached via a clifftop walk through Hastings Country Park. The dramatic sandstone cliffs and sea views make the walk as rewarding as the destination.</p>
+          <p data-cms="localArea.beach.2.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">3 miles east</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Eat & Drink ── -->
+  <section class="bg-cream-50 py-24" id="eat">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-14">
+        <p class="text-[10px] tracking-[0.3em] uppercase text-forest-500 mb-4">02</p>
+        <h2 class="font-serif font-light text-stone-900 leading-tight" style="font-size:clamp(2rem,4vw,3rem)">Eat &amp; Drink</h2>
+        <div class="w-10 h-px bg-stone-400 mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="border-t border-stone-200 pt-8">
+          <div class="flex justify-between items-baseline mb-4">
+            <h3 data-cms="localArea.eat.0.name" class="font-serif font-light text-xl text-stone-900">Maggie's Fish &amp; Chips</h3>
+            <span data-cms="localArea.eat.0.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Stade</span>
+          </div>
+          <p data-cms="localArea.eat.0.desc" class="text-stone-600 font-light text-sm leading-relaxed">Legendary fish and chips served from a hut on the fishing beach. Eat outdoors watching the boats — a Hastings institution and unmissable on any visit.</p>
+        </div>
+        <div class="border-t border-stone-200 pt-8">
+          <div class="flex justify-between items-baseline mb-4">
+            <h3 data-cms="localArea.eat.1.name" class="font-serif font-light text-xl text-stone-900">Rock-a-Nore Kitchen</h3>
+            <span data-cms="localArea.eat.1.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Rock-a-Nore Rd</span>
+          </div>
+          <p data-cms="localArea.eat.1.desc" class="text-stone-600 font-light text-sm leading-relaxed">A much-loved café serving excellent coffee, brunch, and light lunches. Relaxed atmosphere, great food, and just steps from the beach.</p>
+        </div>
+        <div class="border-t border-stone-200 pt-8">
+          <div class="flex justify-between items-baseline mb-4">
+            <h3 data-cms="localArea.eat.2.name" class="font-serif font-light text-xl text-stone-900">The Crown</h3>
+            <span data-cms="localArea.eat.2.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">All Saints St</span>
+          </div>
+          <p data-cms="localArea.eat.2.desc" class="text-stone-600 font-light text-sm leading-relaxed">A proper Old Town pub with real ales, a roaring fire in winter, and a genuinely local atmosphere. One of the oldest pubs in Hastings, tucked into the historic lanes.</p>
+        </div>
+        <div class="border-t border-stone-200 pt-8">
+          <div class="flex justify-between items-baseline mb-4">
+            <h3 data-cms="localArea.eat.3.name" class="font-serif font-light text-xl text-stone-900">Judges Bakery</h3>
+            <span data-cms="localArea.eat.3.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">High St</span>
+          </div>
+          <p data-cms="localArea.eat.3.desc" class="text-stone-600 font-light text-sm leading-relaxed">A wonderful independent bakery on the High Street with outstanding bread, pastries, and cakes. Arrive early — it gets busy, and the sourdough sells out fast.</p>
+        </div>
+        <div class="border-t border-stone-200 pt-8">
+          <div class="flex justify-between items-baseline mb-4">
+            <h3 data-cms="localArea.eat.4.name" class="font-serif font-light text-xl text-stone-900">The Mermaid</h3>
+            <span data-cms="localArea.eat.4.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Rock-a-Nore Rd</span>
+          </div>
+          <p data-cms="localArea.eat.4.desc" class="text-stone-600 font-light text-sm leading-relaxed">A friendly, unpretentious seafood restaurant right on the fishing beach. Fresh catch, simple cooking, brilliant views — exactly what you want on a seaside trip.</p>
+        </div>
+        <div class="border-t border-stone-200 pt-8">
+          <div class="flex justify-between items-baseline mb-4">
+            <h3 data-cms="localArea.eat.5.name" class="font-serif font-light text-xl text-stone-900">Hastings Farmers' Market</h3>
+            <span data-cms="localArea.eat.5.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Town Centre</span>
+          </div>
+          <p data-cms="localArea.eat.5.desc" class="text-stone-600 font-light text-sm leading-relaxed">Held on the second Sunday of each month, the market brings together local producers, growers, and artisan food makers. A lovely way to spend a morning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Dark section: Culture & History ── -->
+  <section class="bg-forest-900 py-28" id="culture">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <p class="text-[10px] tracking-[0.3em] uppercase text-forest-300 mb-4">03</p>
+        <h2 class="font-serif font-light text-white leading-tight" style="font-size:clamp(2rem,4vw,3rem)">Culture &amp; History</h2>
+        <div class="w-10 h-px bg-forest-500 mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-3 border-t border-forest-700">
+        <div class="border-r border-forest-700 py-12 pr-10">
+          <div class="w-8 h-px bg-forest-500 mb-8"></div>
+          <h3 data-cms="localArea.culture.0.name" class="font-serif font-light text-2xl text-white mb-4">Hastings Castle</h3>
+          <p data-cms="localArea.culture.0.desc" class="text-stone-400 font-light text-sm leading-relaxed">The ruins of William the Conqueror's castle perch dramatically on the West Hill, with sweeping views over the town and coastline. One of the first castles built in England after the Norman Conquest.</p>
+        </div>
+        <div class="border-r border-forest-700 py-12 px-10">
+          <div class="w-8 h-px bg-forest-500 mb-8"></div>
+          <h3 data-cms="localArea.culture.1.name" class="font-serif font-light text-2xl text-white mb-4">Hastings Contemporary</h3>
+          <p data-cms="localArea.culture.1.desc" class="text-stone-400 font-light text-sm leading-relaxed">A world-class contemporary art gallery right on the seafront, with an ever-changing programme of exhibitions. The building itself — designed by HAT Projects — is a striking piece of architecture worth seeing.</p>
+        </div>
+        <div class="py-12 pl-10">
+          <div class="w-8 h-px bg-forest-500 mb-8"></div>
+          <h3 data-cms="localArea.culture.2.name" class="font-serif font-light text-2xl text-white mb-4">Smugglers Adventure</h3>
+          <p data-cms="localArea.culture.2.desc" class="text-stone-400 font-light text-sm leading-relaxed">An extensive network of caves beneath the West Hill, with an entertaining and surprisingly informative exhibition on the town's smuggling history. Great for families and curious adults alike.</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 border-t border-forest-700">
+        <div class="border-r border-forest-700 py-12 pr-10">
+          <div class="w-8 h-px bg-forest-500 mb-8"></div>
+          <h3 data-cms="localArea.culture.3.name" class="font-serif font-light text-2xl text-white mb-4">Old Town Lanes</h3>
+          <p data-cms="localArea.culture.3.desc" class="text-stone-400 font-light text-sm leading-relaxed">The winding streets of the Old Town — George Street, All Saints Street, High Street — are lined with independent shops, antique dealers, galleries, and cafés. Allow a morning to wander without a plan.</p>
+        </div>
+        <div class="border-r border-forest-700 py-12 px-10">
+          <div class="w-8 h-px bg-forest-500 mb-8"></div>
+          <h3 data-cms="localArea.culture.4.name" class="font-serif font-light text-2xl text-white mb-4">Fishermen's Museum</h3>
+          <p data-cms="localArea.culture.4.desc" class="text-stone-400 font-light text-sm leading-relaxed">Housed in a former fishermen's church at Rock-a-Nore, this small and charming museum tells the story of Hastings' fishing community through boats, photographs, and artefacts.</p>
+        </div>
+        <div class="py-12 pl-10">
+          <div class="w-8 h-px bg-forest-500 mb-8"></div>
+          <h3 data-cms="localArea.culture.5.name" class="font-serif font-light text-2xl text-white mb-4">Cliff Railways</h3>
+          <p data-cms="localArea.culture.5.desc" class="text-stone-400 font-light text-sm leading-relaxed">Hastings has two Victorian water-balanced funicular railways — the East Hill and West Hill lifts — both still running and both offering remarkable views. The East Hill one is the steepest in the country.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Walks & Outdoors ── -->
+  <section class="bg-cream py-24" id="walks">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-14">
+        <p class="text-[10px] tracking-[0.3em] uppercase text-forest-500 mb-4">04</p>
+        <h2 class="font-serif font-light text-stone-900 leading-tight" style="font-size:clamp(2rem,4vw,3rem)">Walks &amp; Outdoors</h2>
+        <div class="w-10 h-px bg-stone-400 mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div class="space-y-10">
+          <div>
+            <div class="flex items-baseline justify-between mb-3">
+              <h3 data-cms="localArea.walks.0.name" class="font-serif font-light text-xl text-stone-900">Hastings Country Park</h3>
+              <span data-cms="localArea.walks.0.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Easy–Moderate</span>
+            </div>
+            <div class="w-8 h-px bg-stone-300 mb-4"></div>
+            <p data-cms="localArea.walks.0.desc" class="text-stone-600 font-light text-sm leading-relaxed">600 acres of ancient woodland, heathland, and dramatic clifftop above the town. The Firehills — a stretch of gorse and grassland at the park's eastern edge — offer some of the finest sea views in East Sussex. Multiple trails from 2 to 8 miles.</p>
+          </div>
+          <div>
+            <div class="flex items-baseline justify-between mb-3">
+              <h3 data-cms="localArea.walks.1.name" class="font-serif font-light text-xl text-stone-900">East Hill &amp; Ecclesbourne Glen</h3>
+              <span data-cms="localArea.walks.1.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Moderate</span>
+            </div>
+            <div class="w-8 h-px bg-stone-300 mb-4"></div>
+            <p data-cms="localArea.walks.1.desc" class="text-stone-600 font-light text-sm leading-relaxed">Take the East Hill lift to the top and explore the old smugglers' paths down through Ecclesbourne Glen — a hidden valley of ancient oaks that feels entirely removed from the coast below. Circular routes available.</p>
+          </div>
+        </div>
+        <div class="space-y-10">
+          <div>
+            <div class="flex items-baseline justify-between mb-3">
+              <h3 data-cms="localArea.walks.2.name" class="font-serif font-light text-xl text-stone-900">1066 Country Walk</h3>
+              <span data-cms="localArea.walks.2.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Moderate</span>
+            </div>
+            <div class="w-8 h-px bg-stone-300 mb-4"></div>
+            <p data-cms="localArea.walks.2.desc" class="text-stone-600 font-light text-sm leading-relaxed">A long-distance footpath linking Pevensey Castle to Rye via Battle, passing through marshland, farmland, and woodland. The Hastings to Battle section (around 7 miles) makes a satisfying day walk with a pub lunch at the end.</p>
+          </div>
+          <div>
+            <div class="flex items-baseline justify-between mb-3">
+              <h3 data-cms="localArea.walks.3.name" class="font-serif font-light text-xl text-stone-900">Alexandra Park</h3>
+              <span data-cms="localArea.walks.3.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400">Easy</span>
+            </div>
+            <div class="w-8 h-px bg-stone-300 mb-4"></div>
+            <p data-cms="localArea.walks.3.desc" class="text-stone-600 font-light text-sm leading-relaxed">A large, beautiful Victorian park in the heart of Hastings with lakes, formal gardens, a café, and open lawns. Particularly lovely in late spring and early summer when the azaleas and rhododendrons are in bloom.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Day Trips ── -->
+  <section class="bg-stone-100 py-24" id="daytrips">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-14">
+        <p class="text-[10px] tracking-[0.3em] uppercase text-forest-500 mb-4">05</p>
+        <h2 class="font-serif font-light text-stone-900 leading-tight" style="font-size:clamp(2rem,4vw,3rem)">Day Trips</h2>
+        <div class="w-10 h-px bg-stone-400 mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-4 gap-px bg-stone-200">
+        <div class="bg-stone-100 p-8">
+          <p data-cms="localArea.daytrips.0.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400 mb-4">12 miles · 25 min</p>
+          <h3 data-cms="localArea.daytrips.0.name" class="font-serif font-light text-xl text-stone-900 mb-3">Rye</h3>
+          <p data-cms="localArea.daytrips.0.desc" class="text-stone-600 font-light text-sm leading-relaxed">One of England's best-preserved medieval towns, perched on a hill above the Romney Marsh. Cobbled streets, half-timbered houses, antique shops, and excellent places to eat. An easy and very rewarding half-day.</p>
+        </div>
+        <div class="bg-stone-100 p-8">
+          <p data-cms="localArea.daytrips.1.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400 mb-4">6 miles · 15 min</p>
+          <h3 data-cms="localArea.daytrips.1.name" class="font-serif font-light text-xl text-stone-900 mb-3">Battle &amp; Battle Abbey</h3>
+          <p data-cms="localArea.daytrips.1.desc" class="text-stone-600 font-light text-sm leading-relaxed">The site of the Battle of Hastings in 1066, marked by the ruins of Battle Abbey — built by William the Conqueror on the very spot where King Harold fell. A remarkable and atmospheric place.</p>
+        </div>
+        <div class="bg-stone-100 p-8">
+          <p data-cms="localArea.daytrips.2.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400 mb-4">22 miles · 40 min</p>
+          <h3 data-cms="localArea.daytrips.2.name" class="font-serif font-light text-xl text-stone-900 mb-3">Eastbourne &amp; Beachy Head</h3>
+          <p data-cms="localArea.daytrips.2.desc" class="text-stone-600 font-light text-sm leading-relaxed">The iconic chalk headland of Beachy Head offers some of the most dramatic coastal scenery in England, with the famous striped lighthouse far below. Combine with a stroll along Eastbourne's elegant Victorian seafront.</p>
+        </div>
+        <div class="bg-stone-100 p-8">
+          <p data-cms="localArea.daytrips.3.tag" class="text-[10px] tracking-[0.2em] uppercase text-stone-400 mb-4">20 miles · 35 min</p>
+          <h3 data-cms="localArea.daytrips.3.name" class="font-serif font-light text-xl text-stone-900 mb-3">Bodiam Castle</h3>
+          <p data-cms="localArea.daytrips.3.desc" class="text-stone-600 font-light text-sm leading-relaxed">A perfectly preserved 14th-century moated castle set in the Rother Valley — one of the most picturesque castles in England. Managed by the National Trust and wonderful for all ages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pull quote ── -->
+  <section class="bg-cream-200 py-24">
+    <div class="max-w-3xl mx-auto px-8 text-center">
+      <div class="w-12 h-px bg-stone-400 mx-auto mb-12"></div>
+      <blockquote data-cms="localArea.quote" class="font-serif font-light italic leading-relaxed text-stone-800 mb-12" style="font-size:clamp(1.5rem,3vw,2.25rem)">We'll leave a local guide in the house with all our favourite spots — the ones the guidebooks haven't found yet.</blockquote>
+      <div class="w-12 h-px bg-stone-400 mx-auto mb-6"></div>
+      <p class="text-[10px] tracking-[0.3em] uppercase text-stone-500">Your hosts at The Blue House</p>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="bg-forest-800 py-28">
+    <div class="max-w-3xl mx-auto px-8 text-center">
+      <p class="text-[10px] tracking-[0.3em] uppercase text-forest-300 mb-6">Ready to Explore?</p>
+      <h2 class="font-serif font-light text-white leading-tight mb-8" style="font-size:clamp(2.2rem,5vw,4rem)">Book your stay at<br>The Blue House</h2>
+      <div class="w-10 h-px bg-forest-500 mx-auto mb-8"></div>
+      <p class="text-forest-300/70 font-light leading-relaxed mb-12 text-[15px] max-w-md mx-auto">The perfect base for everything Hastings and East Sussex has to offer. Check availability and get in touch.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="contact.html" class="inline-flex bg-white text-forest-900 text-[11px] tracking-[0.18em] uppercase px-10 py-4 hover:bg-cream transition-colors">
+          View Pricing &amp; Contact
+        </a>
+        <a href="images.html" class="inline-flex border border-forest-500 text-forest-300 text-[11px] tracking-[0.18em] uppercase px-10 py-4 hover:border-forest-300 hover:text-white transition-colors">
+          See the Gallery
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="bg-forest-900 text-stone-400">
+    <div class="max-w-7xl mx-auto px-8 pt-16 pb-10">
+      <div class="grid md:grid-cols-4 gap-12 pb-12 border-b border-forest-700">
+        <div class="md:col-span-2">
+          <div class="font-serif font-light text-2xl text-white leading-none mb-0.5">The Blue House</div>
+          <div class="text-[9px] tracking-[0.3em] uppercase text-forest-400 mb-6">Tackleway, Hastings</div>
+          <p class="text-sm font-light leading-relaxed max-w-xs">A beautifully restored coastal holiday let in the heart of Hastings Old Town, East Sussex. Available for short breaks and weekly stays throughout the year.</p>
+        </div>
+        <div>
+          <p class="text-[10px] tracking-[0.25em] uppercase text-stone-600 mb-5">Navigate</p>
+          <ul class="space-y-3 text-sm font-light list-none p-0 m-0">
+            <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="images.html" class="hover:text-white transition-colors">Gallery</a></li>
+            <li><a href="local-area.html" class="hover:text-white transition-colors">Local Area</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Pricing</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Enquire</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[10px] tracking-[0.25em] uppercase text-stone-600 mb-5">Contact</p>
+          <ul class="space-y-3 text-sm font-light list-none p-0 m-0">
+            <li>Tackleway<br>Hastings Old Town<br>East Sussex, TN34</li>
+            <li><a href="tel:+441234567890" class="hover:text-white transition-colors">+44 (0)1234 567890</a></li>
+            <li><a href="mailto:hello@bluehousethackleway.co.uk" class="hover:text-white transition-colors">hello@bluehousethackleway.co.uk</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col md:flex-row justify-between gap-2 text-[11px] tracking-wide text-stone-700 font-light">
+        <span>© 2025 The Blue House Tackleway. All rights reserved.</span>
+        <span>Hastings Old Town, East Sussex</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body></html>

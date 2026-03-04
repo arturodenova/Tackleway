@@ -138,7 +138,7 @@ function buildGalleryHTML(images) {
 
 /** Update all static HTML files from content */
 function updateHTML(content) {
-  const files = ['index.html', 'contact.html', 'images.html'];
+  const files = ['index.html', 'contact.html', 'images.html', 'local-area.html'];
 
   for (const file of files) {
     const filePath = path.join(ROOT, file);
@@ -212,6 +212,7 @@ function updateHTML(content) {
 app.use('/css',    express.static(path.join(ROOT, 'css')));
 app.use('/js',     express.static(path.join(ROOT, 'js')));
 app.use('/images', express.static(path.join(ROOT, 'images')));
+app.use(express.static(ROOT, { extensions: ['html'] }));
 
 // ── Admin UI ───────────────────────────────────────────
 app.get('/admin', (req, res) => {

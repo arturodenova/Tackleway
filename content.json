@@ -144,6 +144,44 @@
   "footer": {
     "description": "A beautifully restored coastal holiday let in the heart of Hastings Old Town, East Sussex. Available for short breaks and weekly stays throughout the year."
   },
+  "localArea": {
+    "heroImage": "images/selected/557a9df3-d815-4df3-9b1a-000c43fe98bf.jpeg.avif",
+    "heroTagline": "From wild coastal walks and freshly landed fish to medieval ruins and hidden lanes — Hastings Old Town rewards those who explore slowly.",
+    "beach": [
+      { "name": "Hastings Beach", "desc": "A classic shingle beach stretching east and west from the pier. The eastern end, known as the Stade, is home to the largest beach-launched fishing fleet in Europe — watch the boats come in and buy fish straight off the boats.", "tag": "3 min walk" },
+      { "name": "Rock-a-Nore", "desc": "The atmospheric stretch at the foot of the East Hill, lined with tall black net shops (for storing fishing gear), a working smokehouse, and the Fishermen's Museum. One of the most characterful corners of the whole coastline.", "tag": "5 min walk" },
+      { "name": "Fairlight Cove", "desc": "A quieter, more secluded beach reached via a clifftop walk through Hastings Country Park. The dramatic sandstone cliffs and sea views make the walk as rewarding as the destination.", "tag": "3 miles east" }
+    ],
+    "eat": [
+      { "name": "Maggie's Fish & Chips", "desc": "Legendary fish and chips served from a hut on the fishing beach. Eat outdoors watching the boats — a Hastings institution and unmissable on any visit.", "tag": "Stade" },
+      { "name": "Rock-a-Nore Kitchen", "desc": "A much-loved café serving excellent coffee, brunch, and light lunches. Relaxed atmosphere, great food, and just steps from the beach.", "tag": "Rock-a-Nore Rd" },
+      { "name": "The Crown", "desc": "A proper Old Town pub with real ales, a roaring fire in winter, and a genuinely local atmosphere. One of the oldest pubs in Hastings, tucked into the historic lanes.", "tag": "All Saints St" },
+      { "name": "Judges Bakery", "desc": "A wonderful independent bakery on the High Street with outstanding bread, pastries, and cakes. Arrive early — it gets busy, and the sourdough sells out fast.", "tag": "High St" },
+      { "name": "The Mermaid", "desc": "A friendly, unpretentious seafood restaurant right on the fishing beach. Fresh catch, simple cooking, brilliant views — exactly what you want on a seaside trip.", "tag": "Rock-a-Nore Rd" },
+      { "name": "Hastings Farmers' Market", "desc": "Held on the second Sunday of each month, the market brings together local producers, growers, and artisan food makers. A lovely way to spend a morning.", "tag": "Town Centre" }
+    ],
+    "culture": [
+      { "name": "Hastings Castle", "desc": "The ruins of William the Conqueror's castle perch dramatically on the West Hill, with sweeping views over the town and coastline. One of the first castles built in England after the Norman Conquest." },
+      { "name": "Hastings Contemporary", "desc": "A world-class contemporary art gallery right on the seafront, with an ever-changing programme of exhibitions. The building itself — designed by HAT Projects — is a striking piece of architecture worth seeing." },
+      { "name": "Smugglers Adventure", "desc": "An extensive network of caves beneath the West Hill, with an entertaining and surprisingly informative exhibition on the town's smuggling history. Great for families and curious adults alike." },
+      { "name": "Old Town Lanes", "desc": "The winding streets of the Old Town — George Street, All Saints Street, High Street — are lined with independent shops, antique dealers, galleries, and cafés. Allow a morning to wander without a plan." },
+      { "name": "Fishermen's Museum", "desc": "Housed in a former fishermen's church at Rock-a-Nore, this small and charming museum tells the story of Hastings' fishing community through boats, photographs, and artefacts." },
+      { "name": "Cliff Railways", "desc": "Hastings has two Victorian water-balanced funicular railways — the East Hill and West Hill lifts — both still running and both offering remarkable views. The East Hill one is the steepest in the country." }
+    ],
+    "walks": [
+      { "name": "Hastings Country Park", "desc": "600 acres of ancient woodland, heathland, and dramatic clifftop above the town. The Firehills — a stretch of gorse and grassland at the park's eastern edge — offer some of the finest sea views in East Sussex. Multiple trails from 2 to 8 miles.", "tag": "Easy–Moderate" },
+      { "name": "East Hill & Ecclesbourne Glen", "desc": "Take the East Hill lift to the top and explore the old smugglers' paths down through Ecclesbourne Glen — a hidden valley of ancient oaks that feels entirely removed from the coast below. Circular routes available.", "tag": "Moderate" },
+      { "name": "1066 Country Walk", "desc": "A long-distance footpath linking Pevensey Castle to Rye via Battle, passing through marshland, farmland, and woodland. The Hastings to Battle section (around 7 miles) makes a satisfying day walk with a pub lunch at the end.", "tag": "Moderate" },
+      { "name": "Alexandra Park", "desc": "A large, beautiful Victorian park in the heart of Hastings with lakes, formal gardens, a café, and open lawns. Particularly lovely in late spring and early summer when the azaleas and rhododendrons are in bloom.", "tag": "Easy" }
+    ],
+    "daytrips": [
+      { "name": "Rye", "desc": "One of England's best-preserved medieval towns, perched on a hill above the Romney Marsh. Cobbled streets, half-timbered houses, antique shops, and excellent places to eat. An easy and very rewarding half-day.", "tag": "12 miles · 25 min" },
+      { "name": "Battle & Battle Abbey", "desc": "The site of the Battle of Hastings in 1066, marked by the ruins of Battle Abbey — built by William the Conqueror on the very spot where King Harold fell. A remarkable and atmospheric place.", "tag": "6 miles · 15 min" },
+      { "name": "Eastbourne & Beachy Head", "desc": "The iconic chalk headland of Beachy Head offers some of the most dramatic coastal scenery in England, with the famous striped lighthouse far below. Combine with a stroll along Eastbourne's elegant Victorian seafront.", "tag": "22 miles · 40 min" },
+      { "name": "Bodiam Castle", "desc": "A perfectly preserved 14th-century moated castle set in the Rother Valley — one of the most picturesque castles in England. Managed by the National Trust and wonderful for all ages.", "tag": "20 miles · 35 min" }
+    ],
+    "quote": "We'll leave a local guide in the house with all our favourite spots — the ones the guidebooks haven't found yet."
+  },
   "gallery": [
     "images/selected/0bdd11dd-ad94-40f8-b212-86519d8e46cf.jpeg.avif",
     "images/selected/0ddd0453-4ec8-4c55-aefe-b1bce7d67b23.jpeg.avif",
