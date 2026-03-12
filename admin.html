@@ -304,14 +304,6 @@
           <label class="cms-label">Address (use \n for line breaks)</label>
           <textarea id="contact.address" class="cms-textarea" rows="3"></textarea>
         </div>
-        <div>
-          <label class="cms-label">Telephone</label>
-          <input type="text" id="contact.phone" class="cms-input" />
-        </div>
-        <div>
-          <label class="cms-label">Email Address</label>
-          <input type="email" id="contact.email" class="cms-input" />
-        </div>
       </div>
     </section>
   </div>
@@ -506,7 +498,7 @@ function populate() {
   const simpleKeys = [
     'hero.tagline','about.heading','about.para1','about.para2',
     'quote','cta.heading','cta.body','footer.description',
-    'contact.address','contact.phone','contact.email'
+    'contact.address'
   ];
   simpleKeys.forEach(k => {
     const el = document.getElementById(k);
@@ -898,7 +890,7 @@ function collectFormValues() {
   const simpleKeys = [
     'hero.tagline','about.heading','about.para1','about.para2',
     'quote','cta.heading','cta.body','footer.description',
-    'contact.address','contact.phone','contact.email'
+    'contact.address'
   ];
   simpleKeys.forEach(k => {
     const el = document.getElementById(k);

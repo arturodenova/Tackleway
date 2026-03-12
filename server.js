@@ -168,26 +168,7 @@ function updateHTML(content) {
       if (val !== undefined) $(el).attr('src', String(val));
     });
 
-    // Phone href
-    $('[data-cms-tel]').each((_, el) => {
-      const key = $(el).attr('data-cms-tel');
-      const val = getVal(content, key);
-      if (val !== undefined) {
-        const digits = String(val).replace(/[^0-9+]/g, '');
-        $(el).attr('href', `tel:${digits}`);
-        $(el).text(String(val));
-      }
-    });
 
-    // Email href
-    $('[data-cms-email]').each((_, el) => {
-      const key = $(el).attr('data-cms-email');
-      const val = getVal(content, key);
-      if (val !== undefined) {
-        $(el).attr('href', `mailto:${val}`);
-        $(el).text(String(val));
-      }
-    });
 
     // Gallery regeneration (images.html)
     if (file === 'images.html' && content.gallery) {
