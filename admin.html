@@ -13,9 +13,9 @@
       theme: {
         extend: {
           colors: {
-            cream: { DEFAULT:'#f5f0e6', 50:'#fdfbf7', 200:'#ede5d3' },
-            forest: { 300:'#73a477', 500:'#2e5e33', 700:'#122d16', 900:'#070f08' },
-            stone: { 50:'#faf8f4', 100:'#f0ece4', 200:'#ddd6c8', 300:'#c5bba9', 400:'#a8998a', 500:'#8a7a6c', 600:'#6e6254', 700:'#52483d', 900:'#1a1610' }
+            cream: { DEFAULT:'#f5f0e6', 50:'#fdfbf7', 200:'#ede5d3', 300:'#d9d0c0' },
+            forest: { 300:'#7ba3b5', 400:'#4e839a', 500:'#2e6480', 600:'#1e4a60', 700:'#143345', 800:'#0c2030', 900:'#081520' },
+            stone: { 50:'#faf8f4', 100:'#f0ece4', 200:'#ddd6c8', 300:'#c5bba9', 400:'#a8998a', 500:'#8a7a6c', 600:'#6e6254', 700:'#52483d', 800:'#36302a', 900:'#1a1610' }
           },
           fontFamily: {
             serif: ['Cormorant Garamond','Georgia','serif'],
@@ -71,7 +71,7 @@
       cursor: pointer; border: 2px solid transparent;
       transition: border-color .15s;
     }
-    .thumb.selected { border-color: #2e5e33; }
+    .thumb.selected { border-color: #2e6480; }
     .gallery-thumb {
       position: relative;
       width: 120px; height: 90px; flex-shrink: 0;
@@ -93,7 +93,7 @@
       z-index: 9999;
     }
     .toast.show { opacity: 1; }
-    .drag-over { outline: 2px dashed #2e5e33; }
+    .drag-over { outline: 2px dashed #2e6480; }
     #loginScreen { position: fixed; inset: 0; z-index: 1000;
       background: #fdfbf7; display: flex; align-items: center; justify-content: center; }
   </style>
@@ -781,7 +781,7 @@ function renderStripSlots() {
       <div class="text-center">
         <div class="cms-label mb-1">Slot ${i + 1}</div>
         <img src="${src}" id="stripSlot-${i}"
-          style="width:100px;height:75px;object-fit:cover;border:2px solid ${activeStripSlot===i?'#2e5e33':'#ddd'};cursor:pointer"
+          style="width:100px;height:75px;object-fit:cover;border:2px solid ${activeStripSlot===i?'#2e6480':'#ddd'};cursor:pointer"
           onclick="setActiveStripSlot(${i})"
           onerror="this.style.background='#eee'" />
       </div>`);

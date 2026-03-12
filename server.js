@@ -208,16 +208,20 @@ function updateHTML(content) {
   }
 }
 
+// ── HTML page routes (before /images static to avoid conflict) ──
+app.get('/', (req, res) => res.sendFile(path.join(ROOT, 'index.html')));
+app.get('/images', (req, res) => res.sendFile(path.join(ROOT, 'images.html')));
+app.get('/images/', (req, res) => res.redirect('/images'));
+app.get('/images.html', (req, res) => res.sendFile(path.join(ROOT, 'images.html')));
+app.get('/contact', (req, res) => res.sendFile(path.join(ROOT, 'contact.html')));
+app.get('/local-area', (req, res) => res.sendFile(path.join(ROOT, 'local-area.html')));
+app.get('/admin', (req, res) => res.sendFile(path.join(ROOT, 'admin.html')));
+
 // ── Static files ───────────────────────────────────────
 app.use('/css',    express.static(path.join(ROOT, 'css')));
 app.use('/js',     express.static(path.join(ROOT, 'js')));
-app.use('/images', express.static(path.join(ROOT, 'images')));
+app.use('/images', express.static(path.join(ROOT, 'images'), { redirect: false }));
 app.use(express.static(ROOT, { extensions: ['html'] }));
-
-// ── Admin UI ───────────────────────────────────────────
-app.get('/admin', (req, res) => {
-  res.sendFile(path.join(ROOT, 'admin.html'));
-});
 
 // ── API ────────────────────────────────────────────────
 
